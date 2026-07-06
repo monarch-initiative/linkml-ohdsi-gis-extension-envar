@@ -1,0 +1,16 @@
+# Changes here will be overwritten by Copier
+_commit: v0.5.0
+_src_path: https://github.com/linkml/linkml-project-copier
+add_example: true
+copyright_year: '2026'
+email: bryan@tislab.org
+existing_license_file: ''
+full_name: Bryan Laraway
+gh_action_docs_preview: true
+gh_action_pypi: false
+github_org: monarch-initiative
+license: Apache-2.0
+project_description: A LinkML model of the OHDSI GIS extension
+project_name: linkml-ohdsi-gis-extension-envar
+project_slug: linkml_ohdsi_gis_extension_envar
+

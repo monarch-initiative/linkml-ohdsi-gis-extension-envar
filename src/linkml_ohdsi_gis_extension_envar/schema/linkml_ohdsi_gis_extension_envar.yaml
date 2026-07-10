@@ -72,6 +72,8 @@ classes:
       - relationship_type_concept_id
 #────────────────────────────────────────────────────────────────
 # GIS Source Template Tables -> https://ohdsi.github.io/GIS/gaia-principles.html
+# Are these needed? They are templates, but may differ in actual implementation,
+# and could have diffrerent/additional variables.
 #────────────────────────────────────────────────────────────────
 
   GeomTemplate:
@@ -148,7 +150,7 @@ classes:
 
   Location:
     description: >-
-      Description
+      A class representing a physical location
     slots:
       - location_id
       - address_1
@@ -158,6 +160,7 @@ classes:
       - zip
       - county
       - location_source_value
+      # Note the fields below are extensions of the standard Location table
       - country_concept_id
       - country_source_value
       - latitude
@@ -165,7 +168,7 @@ classes:
 
   Person:
     description: >-
-      Description
+      A class representing a person
     slots:
       - person_id
       - gender_concept_id
@@ -188,7 +191,7 @@ classes:
 
   Concept:
     description: >-
-      Description
+      A class representing an OMOP concept
     slots:
       - concept_id
       - concept_name
@@ -201,142 +204,261 @@ classes:
       - valid_end_date
       - invalid_reason
 
-
-#────────────────────────────────────────────────────────────────
-# ENUMS
-#────────────────────────────────────────────────────────────────
-
-
-
-
-  NamedThing:
-    description: >-
-      A generic grouping for any identifiable entity
-    slots:
-      - id
-      - name
-      - description
-    class_uri: schema:Thing
-
 #────────────────────────────────────────────────────────────────
 # SLOTS
 #────────────────────────────────────────────────────────────────
 
 slots:
+  # External Exposure table slots
   external_exposure_id:
     identifier: true
+    range: integer
+    required: true
   location_id:
     identifier: true
+    range: integer
   person_id:
     identifier: true
+    range: integer
   exposure_concept_id:
     identifier: true
+    range: integer
   exposure_start_date:
+    range: date
   exposure_start_datetime:
+    range: datetime
   exposure_end_date:
+    range: date
   exposure_end_datetime:
+    range: datetime
   exposure_type_concept_id:
     identifier: true
+    range: integer
   exposure_relationship_concept_id:
     identifier: true
+    range: integer
   exposure_source_concept_id:
     identifier: true
+    range: integer
   exposure_source_value:
+    range: string
   exposure_relationship_source_value:
+    range: string
   dose_unit_source_value:
+    range: string
   quantity:
+    range: float
   modifier_source_value:
+    range: string
   operator_concept_id:
     identifier: true
+    range: integer
   value_as_number:
+    range: float
   value_as_concept_id:
     identifier: true
+    range: integer
   unit_concept_id:
     identifier: true
+    range: integer
+
+  # location history slots
   relationship_type_concept_id:
     identifier: true
+    range: integer
   domain_id:
     identifier: true
+    range: string  # GIS documentation says integer
+    pattern: "^.{0,20}$" # 20 character limit
   entity_id:
     identifier: true
+    range: integer
   start_date:
+    range: date
   end_date:
+    range: date
+
+  # Location slots
   address_1:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
   address_2:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
   city:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
   state:
+    range: string
+    pattern: "^.{0,2}$" # two character limit
   zip:
+    range: string
+    pattern: "^.{3,9}$" # zips can be 3-digit abbreviations, 5 digits, or 9 digits (ZIP+4)
   county:
+    range: string
+    pattern: "^.{0,20}$" # 20 character limit
   location_source_value:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
   country_concept_id:
     identifier: true
+    range: integer
   country_source_value:
+    range: string
   latitude:
+    range: float
+    minimum_value: -90
+    maximum_value: 90
   longitude:
+    range: float
+    minimum_value: -180
+    maximum_value: 180
+
+  # Person table slots
   gender_concept_id:
     identifier: true
+    range: integer
   year_of_birth:
+    range: integer
   month_of_birth:
+    range: integer
   day_of_birth:
+    range: integer
   birth_datetime:
+    range: datetime
   race_concept_id:
     identifier: true
+    range: integer
   ethnicity_concept_id:
     identifier: true
+    range: integer
   provider_id:
     identifier: true
+    range: integer
   care_site_id:
     identifier: true
+    range: integer
   person_source_value:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
   gender_source_value:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
   gender_source_concept_id:
     identifier: true
+    range: integer
   race_source_value:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
   race_source_concept_id:
     identifier: true
+    range: integer
   ethnicity_source_value:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
   ethnicity_source_concept_id:
     identifier: true
+    range: integer
+
+  # Concept slots
   concept_id:
     identifier: true
+    range: integer
   concept_name:
+    range: string
+    pattern: "^.{0,255}$" # 255 character limit
   vocabulary_id:
     identifier: true
+    range: string
+    pattern: "^.{0,20}$" # 20 character limit
   concept_class_id:
-    identifier: tr
-  standard_concept:
-  concept_code:
-  valid_start_date:
-  valid_end_date:
-  invalid_reason:
-
-
-
-
-  id:
     identifier: true
-    slot_uri: schema:identifier
-    range: uriorcurie
-    description: A unique identifier for a thing
-  name:
-    slot_uri: schema:name
-    description: A human-readable name for a thing
-  description:
-    slot_uri: schema:description
-    description: A human-readable description for a thing
-  primary_email:
-    slot_uri: schema:email
-    description: The main email address of a person
-  birth_date:
-    slot_uri: schema:birthDate
+    range: string
+    pattern: "^.{0,20}$" # 20 character limit
+  standard_concept:
+    range: string
+    pattern: "^.$"  # Limit to one character
+  concept_code:
+    range: string
+    pattern: "^.{0,50}$" # 50 character limit
+  valid_start_date:
     range: date
-    description: Date on which a person is born
-  age_in_years:
-    range: integer
-    description: Number of years since birth
-  vital_status:
-    range: PersonStatus
-    description: living or dead status
+  valid_end_date:
+    range: date
+  invalid_reason:
+    range: string
+    pattern: "^.$"  # Limit to one character
+
+
+  # Template table slots - Needed?
+
+  # GeomTemplate slots
+  geom_record_id:
+    identifier: true
+  geom_source_coding:
+  geom_source_value:
+  geom_wgs84:
+  geom_local_epsg:
+  geom_local_value:
+
+  # AttrTemplate slots
+  attr_record_id:
+    identifier: true
+  # geom_record_id:
+  variable_source_record_id:
+    identifier: true
+  attr_concept_id:
+    identifier: true
+  attr_start_date:
+  attr_end_date:
+  # value_as_number:
+  value_as_string:
+  # value_as_concept_id:
+  # unit_concept_id:
+  unit_source_value:
+  qualifier_concept_id:
+    identifier: true
+  qualifier_source_value:
+  attr_source_concept_id:
+    identifier: true
+  attr_source_value:
+  value_source_value:
+
+  # AttrIndex slots
+  attr_index_id:
+    identifier: true
+  attr_of_geom_index_id:
+    identifier: true
+  database_schema:
+  table_name:
+  data_source_id:
+    identifier: true
+
+
+  # GeomIndex slots:
+  geom_index_id:
+    identifier: true
+  data_type_id:
+    identifier: true
+  data_type_name:
+  geom_type_concept_id:
+    identifier: true
+  geom_type_source_value:
+  # database_schema:
+  # table_name:
+  table_desc:
+  # data_source_id:
+
+  # VariableSource slots:
+  variable_source_id:
+    identifier: true
+  variable_name:
+  variable_desc:
+  data_source_uuid:
+  attr_spec:
+
+
+
 
 
 #────────────────────────────────────────────────────────────────
@@ -344,18 +466,4 @@ slots:
 #────────────────────────────────────────────────────────────────
 
 
-enums:
-  PersonStatus:
-    description:
-      The vital status of a person
-    permissible_values:
-      ALIVE:
-        description: the person is living
-        meaning: PATO:0001421
-      DEAD:
-        description: the person is deceased
-        meaning: PATO:0001422
-      UNKNOWN:
-        description: the vital status is not known
-        todos:
-          - map this to an ontology
+

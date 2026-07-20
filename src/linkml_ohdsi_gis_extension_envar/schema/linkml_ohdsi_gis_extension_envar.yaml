@@ -51,7 +51,24 @@ classes:
       - value_as_number
       - value_as_concept_id
       - unit_concept_id
-    class_uri: schema:Thing
+    slot_usage:
+      external_exposure_id:
+        key: true
+        required: true
+      location_id:
+        required: true
+      person_id:
+        required: true
+      exposure_concept_id:
+        required: true
+      exposure_start_date:
+        required: true
+      exposure_end_date:
+        required: true
+      exposure_type_concept_id:
+        required: true
+      exposure_relationship_concept_id:
+        required: true
 
   LocationHistory:
     description: >-
@@ -63,13 +80,30 @@ classes:
       - entity_id
       - start_date
       - end_date
+    slot_usage:
+      location_id:
+        key: true
+        required: true
+      relationship_type_concept_id:
+        required: true
+      domain_id:
+        required: true
+      entity_id:
+        required: true
+      start_date:
+        required: true
 
-  LocationMap:
+  LocationMap: #TODO: is there a full schema available somewhere for LocationMap? I have yet to find anything beyond what's in the schema overview diagram that only displays two fields.
     description: >-
-      A class representing the location
+      A class representing the locations mapped to address points.
     slots:
       - location_id
-      - relationship_type_concept_id
+      - address_point
+    slot_usage:
+      location_id:
+        key: true
+        required: true
+
 #────────────────────────────────────────────────────────────────
 # GIS Source Template Tables -> https://ohdsi.github.io/GIS/gaia-principles.html
 # Are these needed? They are templates, but may differ in actual implementation,
@@ -78,18 +112,33 @@ classes:
 
   GeomTemplate:
     description: >-
-      A class representing...
+      A class representing a template for mapping geometries from a data source.
     slots:
       - geom_record_id
+      - geom_name
       - geom_source_coding
       - geom_source_value
       - geom_wgs84
       - geom_local_epsg
       - geom_local_value
+    slot_usage:
+      geom_record_id:
+        key: true
+        required: true
+      geom_name:
+        required: true
+      geom_source_coding:
+        required: true
+      geom_source_value:
+        required: true
+      geom_local_epsg:
+        required: true
+      geom_local_value:
+        required: true
 
   AttrTemplate:
     description: >-
-      A class representing...
+      A class representing a template for mapping attributes from a data source.
     slots:
       - attr_record_id
       - geom_record_id
@@ -107,21 +156,51 @@ classes:
       - attr_source_concept_id
       - attr_source_value
       - value_source_value
+    slot_usage:
+      attr_record_id:
+        key: true
+        required: true
+      geom_record_id:
+        required: true
+      variable_source_record_id:
+        required: true
+      attr_start_date:
+        required: true
+      attr_end_date:
+        required: true
+      attr_source_value:
+        required: true
+      value_source_value:
+        required: true
 
   AttrIndex:
     description: >-
-      A class representing...
+      A class representing an index of attributes from a data source.
     slots:
       - attr_index_id
+      - variable_source_id
       - attr_of_geom_index_id
       - database_schema
       - table_name
       - data_source_id
-
+    slot_usage:
+      attr_index_id:
+        key: true
+        required: true
+      variable_source_id:
+        required: true
+      attr_of_geom_index_id:
+        required: true
+      database_schema:
+        required: true
+      table_name:
+        required: true
+      data_source_id:
+        required: true
 
   GeomIndex:
     description: >-
-      A class representing the location
+      A class representing an index of geometries from a data source.
     slots:
       - geom_index_id
       - data_type_id
@@ -132,17 +211,87 @@ classes:
       - table_name
       - table_desc
       - data_source_id
-
+    slot_usage:
+      geom_index_id:
+        key: true
+        required: true
+      data_type_name:
+        required: true
+      database_schema:
+        required: true
+      table_name:
+        required: true
+      table_desc:
+        required: true
+      data_source_id:
+        required: true
 
   VariableSource:
     description: >-
-      A class representing the location
+      A class representing metadata about the variables in the data source.
     slots:
       - variable_source_id
+      - geom_dependency_uuid
       - variable_name
       - variable_desc
       - data_source_uuid
       - attr_spec
+    slot_usage:
+      variable_source_id:
+        key: true
+        required: true
+      variable_name:
+        required: true
+      variable_desc:
+        required: true
+      data_source_uuid:
+        required: true
+      attr_spec:
+        required: true
+
+  DataSource:
+    description: >-
+      A class representing metadata about the data source.
+    slots:
+      - data_source_uuid
+      - org_id
+      - org_set_id
+      - dataset_name
+      - dataset_version
+      - geom_type
+      - geom_spec
+      - boundary_type
+      - has_attributes
+      - download_method
+      - download_subtype
+      - download_data_standard
+      - download_filename
+      - download_url
+      - download_auth
+      - documentation_url
+    slot_usage:
+      data_source_uuid:
+        key: true
+        required: true
+      org_id:
+        required: true
+      org_set_id:
+        required: true
+      dataset_name:
+        required: true
+      dataset_version:
+        required: true
+      download_method:
+        required: true
+      download_subtype:
+        required: true
+      download_data_standard:
+        required: true
+      download_filename:
+        required: true
+      download_url:
+        required: true
+
 
 #────────────────────────────────────────────────────────────────
 # Standard OMOP Tables
@@ -165,6 +314,10 @@ classes:
       - country_source_value
       - latitude
       - longitude
+    slot_usage:
+      location_id:
+        key: true
+        required: true
 
   Person:
     description: >-
@@ -188,6 +341,19 @@ classes:
       - race_source_concept_id
       - ethnicity_source_value
       - ethnicity_source_concept_id
+    slot_usage:
+      person_id:
+        key: true
+        required: true
+      gender_concept_id:
+        required: true
+      year_of_birth:
+        required: true
+      race_concept_id:
+        required: true
+      ethnicity_concept_id:
+        required: true
+
 
   Concept:
     description: >-
@@ -203,7 +369,24 @@ classes:
       - valid_start_date
       - valid_end_date
       - invalid_reason
-
+    slot_usage:
+      concept_id:
+        key: true
+        required: true
+      concept_name:
+        required: true
+      domain_id:
+        required: true
+      vocabulary_id:
+        required: true
+      concept_class_id:
+        required: true
+      concept_code:
+        required: true
+      valid_start_date:
+        required: true
+      valid_end_date:
+        required: true
 #────────────────────────────────────────────────────────────────
 # SLOTS
 #────────────────────────────────────────────────────────────────
@@ -213,7 +396,6 @@ slots:
   external_exposure_id:
     identifier: true
     range: integer
-    required: true
   location_id:
     identifier: true
     range: integer
@@ -263,12 +445,13 @@ slots:
     range: integer
 
   # location history slots
+  # location_id
   relationship_type_concept_id:
     identifier: true
     range: integer
   domain_id:
     identifier: true
-    range: string  # GIS documentation says integer
+    range: string  # GIS documentation says integer, which diverges from OMOP CDM 6
     pattern: "^.{0,20}$" # 20 character limit
   entity_id:
     identifier: true
@@ -317,7 +500,8 @@ slots:
   # Person table slots
   gender_concept_id:
     identifier: true
-    range: integer
+    range: GenderConceptID
+    # range: integer  # Swapping with enum
   year_of_birth:
     range: integer
   month_of_birth:
@@ -389,81 +573,183 @@ slots:
     range: string
     pattern: "^.$"  # Limit to one character
 
-
-  # Template table slots - Needed?
-
   # GeomTemplate slots
   geom_record_id:
     identifier: true
+    range: integer
+  geom_name:
+    range: string
   geom_source_coding:
+    range: string
   geom_source_value:
+    range: string
   geom_wgs84:
+    range: geometry #TODO: Need to create an enum or something to model a "geometry" type?
   geom_local_epsg:
+    range: integer
   geom_local_value:
+    range: geometry #TODO: Need to create an enum or something to model a "geometry" type?
 
   # AttrTemplate slots
   attr_record_id:
     identifier: true
+    range: integer  # postgresql type: serial
   # geom_record_id:
   variable_source_record_id:
     identifier: true
+    range: integer
   attr_concept_id:
     identifier: true
+    range: integer
   attr_start_date:
+    range: date
   attr_end_date:
+    range: date
   # value_as_number:
   value_as_string:
+    range: string
   # value_as_concept_id:
   # unit_concept_id:
   unit_source_value:
+    range: string
   qualifier_concept_id:
     identifier: true
+    range: integer
   qualifier_source_value:
+    range: string
   attr_source_concept_id:
     identifier: true
+    range: integer
   attr_source_value:
+    range: string
   value_source_value:
+    range: string
 
   # AttrIndex slots
   attr_index_id:
     identifier: true
+    range: float  # postgresql type: numeric
   attr_of_geom_index_id:
     identifier: true
+    range: float  # postgresql type: numeric
   database_schema:
+    range: string
+    pattern: "^.{0,255}$" # 255 character limit
   table_name:
+    range: string
+    pattern: "^.{0,255}$" # 255 character limit
   data_source_id:
     identifier: true
+    range: float  # postgresql type: numeric
 
 
   # GeomIndex slots:
   geom_index_id:
     identifier: true
+    range: float  # postgresql type: numeric
   data_type_id:
     identifier: true
+    range: float  # postgresql type: numeric
   data_type_name:
+    range: string
+    pattern: "^.{0,255}$" # 255 character limit
   geom_type_concept_id:
     identifier: true
+    range: float  # postgresql type: numeric
   geom_type_source_value:
+    range: string
+    pattern: "^.{0,255}$" # 255 character limit
   # database_schema:
   # table_name:
   table_desc:
+    range: string
+    pattern: "^.{0,255}$" # 255 character limit
   # data_source_id:
 
   # VariableSource slots:
   variable_source_id:
     identifier: true
+    range: integer
+  geom_dependency_uuid:
+    identifier: true
+    range: integer
   variable_name:
+    range: string
   variable_desc:
+    range: string
   data_source_uuid:
+    identifier: true
+    range: integer
   attr_spec:
+    range: string
 
+  # DataSource slots:
+  org_id:
+    identifier: true
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  org_set_id:
+    identifier: true
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  dataset_name:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  dataset_version:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  geom_type:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  geom_spec:
+    range: string  # Note that the postgres format is listed as text, without character limit
+  boundary_type:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  has_attributes:
+    range: integer
+  download_method:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  download_subtype:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  download_data_standard:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  download_filename:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  download_url:
+    range: string
+    pattern: "^.{0,255}$" # 255 character limit
+  download_auth:
+    range: string
+    pattern: "^.{0,100}$" # 100 character limit
+  documentation_url:
+    range: string
+    pattern: "^.{0,255}$" # 255 character limit
 
-
+  # LocationMap slots:
+  address_point:
 
 
 #────────────────────────────────────────────────────────────────
 # ENUMS
 #────────────────────────────────────────────────────────────────
+# Possible enums
+# Gender: https://athena.ohdsi.org/search-terms/terms?domain=Gender&standardConcept=Standard&page=1&pageSize=15&query=  (2 concepts)
+# Race: https://athena.ohdsi.org/search-terms/terms?domain=Race&standardConcept=Standard&page=1&pageSize=500&query= (1406 concepts)
+# Ethnicity: https://athena.ohdsi.org/search-terms/terms?domain=Ethnicity&standardConcept=Standard&page=1&pageSize=500&query= (150 concepts)
+# Is there way to specify domain of a concept? If so, could indicate that the race concept ID must have a Race domain ID.
+# It would require a means of looking up the domain of a concept when used in another table, like Race/Ethnicity in the Person table.
 
-
-
+enums:
+  GenderConceptID:
+    permissible_values:
+      8532: # OMOP Concept ID
+        Description: F, Female
+        meaning: PATO:0000383 # female
+      8507: # OMOP Concept ID
+        Description: M, Male
+        meaning: PATO:0000384 # male

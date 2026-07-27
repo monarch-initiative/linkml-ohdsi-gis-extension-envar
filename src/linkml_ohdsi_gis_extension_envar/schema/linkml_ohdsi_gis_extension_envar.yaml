@@ -559,27 +559,35 @@ slots:
   gender_concept_id:
     # identifier: true
     range: GenderConceptID
+    description: Concept ID corresponding to an OMOP gender concept.
     # range: integer  # Swapping with enum
   year_of_birth:
     range: integer
+    description: A person's year of birth.
   month_of_birth:
     range: integer
+    description: A person's month of birth.
   day_of_birth:
     range: integer
+    description: A person's day of birth.
   birth_datetime:
     range: datetime
   race_concept_id:
     # identifier: true
     range: integer
+    description: Concept ID corresponding to an OMOP race concept.
   ethnicity_concept_id:
     # identifier: true
     range: integer
+    description: Concept ID corresponding to an OMOP ethnicity concept.
   provider_id:
     # identifier: true
     range: integer
+    description: Concept ID corresponding to a provider.
   care_site_id:
     # identifier: true
     range: integer
+    description: Concept ID corresponding to a care site.
   person_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
@@ -589,12 +597,14 @@ slots:
   gender_source_concept_id:
     # identifier: true
     range: integer
+    description: Concept ID corresponding to a gender in the source data if a corresponding concept ID exists. Otherwise 0.
   race_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
   race_source_concept_id:
     # identifier: true
     range: integer
+    descriptiong: Concept ID corresponding to a race in the source data if a corresponding concept ID exists. Otherwise 0.
   ethnicity_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit

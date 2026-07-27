@@ -604,7 +604,7 @@ slots:
   race_source_concept_id:
     # identifier: true
     range: integer
-    descriptiong: Concept ID corresponding to a race in the source data if a corresponding concept ID exists. Otherwise 0.
+    description: Concept ID corresponding to a race in the source data if a corresponding concept ID exists. Otherwise 0.
   ethnicity_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit

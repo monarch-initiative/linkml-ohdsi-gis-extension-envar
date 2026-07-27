@@ -21,7 +21,63 @@ default_range: string
 imports:
   - linkml:types
 
+
+
 classes:
+
+  #Geometry class to be used as range
+  Geometry:
+    # Geometry types per https://postgis.net/docs/using_postgis_dbmanagement.html#OGC_Geometry
+    # uri: xsd:string
+    # base: str
+    description: Geometry is an abstract type. Geometry values belong to one of its concrete subtypes which represent various kinds and dimensions of geometric shapes.
+    # range: string
+  Point:
+    is_a: Geometry
+    description: A Point is a 0-dimensional geometry that represents a single location in coordinate space.
+    # range: string
+  LineString:
+    is_a: Geometry
+    description: A LineString is a 1-dimensional line formed by a contiguous sequence of line segments. Each line segment is defined by two points, with the end point of one segment forming the start point of the next segment. An OGC-valid LineString has either zero or two or more points, but PostGIS also allows single-point LineStrings. LineStrings may cross themselves (self-intersect). A LineString is closed if the start and end points are the same. A LineString is simple if it does not self-intersect.
+    # range: string
+  LinearRing:
+    is_a: Geometry
+    description: A LinearRing is a LineString which is both closed and simple. The first and last points must be equal, and the line must not self-intersect.
+    # range: string
+  Polygon:
+    is_a: Geometry
+    description: A Polygon is a 2-dimensional planar region, delimited by an exterior boundary (the shell) and zero or more interior boundaries (holes). Each boundary is a LinearRing.
+    # range: string
+  MultiPoint:
+    is_a: Geometry
+    description: A MultiPoint is a collection of Points.
+    # range: string
+  MultiLineString:
+    is_a: Geometry
+    description: A MultiLineString is a collection of LineStrings. A MultiLineString is closed if each of its elements is closed.
+    # range: string
+  MultiPolygon:
+    is_a: Geometry
+    description: A MultiPolygon is a collection of non-overlapping, non-adjacent Polygons. Polygons in the collection may touch only at a finite number of points.
+    # range: string
+  GeometryCollection:
+    is_a: Geometry
+    description: A GeometryCollection is a heterogeneous (mixed) collection of geometries.
+    # range: string
+  PolyhedralSurface:
+    is_a: Geometry
+    description: A PolyhedralSurface is a contiguous collection of patches or facets which share some edges. Each patch is a planar Polygon. If the Polygon coordinates have Z ordinates then the surface is 3-dimensional.
+    # range: string
+  Triangle:
+    is_a: Geometry
+    description: A Triangle is a polygon defined by three distinct non-collinear vertices. Because a Triangle is a polygon it is specified by four coordinates, with the first and fourth being equal.
+    # range: string
+  TIN:  # (riangulated Irregular Network
+    is_a: Geometry
+    description: A TIN is a collection of non-overlapping Triangles representing a Triangulated Irregular Network.
+    # range: string
+
+
 
 #────────────────────────────────────────────────────────────────
 # GIS Extension OMOP Tables
@@ -54,7 +110,8 @@ classes:
     slot_usage:
       external_exposure_id:
         key: true
-        required: true
+        # identifier: true
+        # required: true # not needed if identifier as automatically required
       location_id:
         required: true
       person_id:
@@ -81,9 +138,10 @@ classes:
       - start_date
       - end_date
     slot_usage:
-      location_id:
-        key: true
+      location_id:  #
+        # key: true
         required: true
+        # identifier: true
       relationship_type_concept_id:
         required: true
       domain_id:
@@ -394,16 +452,16 @@ classes:
 slots:
   # External Exposure table slots
   external_exposure_id:
-    identifier: true
+    # identifier: true
     range: integer
   location_id:
-    identifier: true
+    # identifier: true
     range: integer
   person_id:
-    identifier: true
+    # identifier: true
     range: integer
   exposure_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   exposure_start_date:
     range: date
@@ -414,13 +472,13 @@ slots:
   exposure_end_datetime:
     range: datetime
   exposure_type_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   exposure_relationship_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   exposure_source_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   exposure_source_value:
     range: string
@@ -433,28 +491,28 @@ slots:
   modifier_source_value:
     range: string
   operator_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   value_as_number:
     range: float
   value_as_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   unit_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
 
   # location history slots
   # location_id
   relationship_type_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   domain_id:
-    identifier: true
+    # identifier: true
     range: string  # GIS documentation says integer, which diverges from OMOP CDM 6
     pattern: "^.{0,20}$" # 20 character limit
   entity_id:
-    identifier: true
+    # identifier: true
     range: integer
   start_date:
     range: date
@@ -484,7 +542,7 @@ slots:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
   country_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   country_source_value:
     range: string
@@ -499,7 +557,7 @@ slots:
 
   # Person table slots
   gender_concept_id:
-    identifier: true
+    # identifier: true
     range: GenderConceptID
     # range: integer  # Swapping with enum
   year_of_birth:
@@ -511,16 +569,16 @@ slots:
   birth_datetime:
     range: datetime
   race_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   ethnicity_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   provider_id:
-    identifier: true
+    # identifier: true
     range: integer
   care_site_id:
-    identifier: true
+    # identifier: true
     range: integer
   person_source_value:
     range: string
@@ -529,34 +587,34 @@ slots:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
   gender_source_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   race_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
   race_source_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   ethnicity_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
   ethnicity_source_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
 
   # Concept slots
   concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   concept_name:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
   vocabulary_id:
-    identifier: true
+    # identifier: true
     range: string
     pattern: "^.{0,20}$" # 20 character limit
   concept_class_id:
-    identifier: true
+    # identifier: true
     range: string
     pattern: "^.{0,20}$" # 20 character limit
   standard_concept:
@@ -575,7 +633,7 @@ slots:
 
   # GeomTemplate slots
   geom_record_id:
-    identifier: true
+    # identifier: true
     range: integer
   geom_name:
     range: string
@@ -584,22 +642,22 @@ slots:
   geom_source_value:
     range: string
   geom_wgs84:
-    range: geometry #TODO: Need to create an enum or something to model a "geometry" type?
+    range: Geometry
   geom_local_epsg:
     range: integer
   geom_local_value:
-    range: geometry #TODO: Need to create an enum or something to model a "geometry" type?
+    range: Geometry
 
   # AttrTemplate slots
   attr_record_id:
-    identifier: true
+    # identifier: true
     range: integer  # postgresql type: serial
   # geom_record_id:
   variable_source_record_id:
-    identifier: true
+    # identifier: true
     range: integer
   attr_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   attr_start_date:
     range: date
@@ -613,12 +671,12 @@ slots:
   unit_source_value:
     range: string
   qualifier_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   qualifier_source_value:
     range: string
   attr_source_concept_id:
-    identifier: true
+    # identifier: true
     range: integer
   attr_source_value:
     range: string
@@ -627,10 +685,10 @@ slots:
 
   # AttrIndex slots
   attr_index_id:
-    identifier: true
+    # identifier: true
     range: float  # postgresql type: numeric
   attr_of_geom_index_id:
-    identifier: true
+    # identifier: true
     range: float  # postgresql type: numeric
   database_schema:
     range: string
@@ -639,22 +697,22 @@ slots:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
   data_source_id:
-    identifier: true
+    # identifier: true
     range: float  # postgresql type: numeric
 
 
   # GeomIndex slots:
   geom_index_id:
-    identifier: true
+    # identifier: true
     range: float  # postgresql type: numeric
   data_type_id:
-    identifier: true
+    # identifier: true
     range: float  # postgresql type: numeric
   data_type_name:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
   geom_type_concept_id:
-    identifier: true
+    # identifier: true
     range: float  # postgresql type: numeric
   geom_type_source_value:
     range: string
@@ -668,28 +726,28 @@ slots:
 
   # VariableSource slots:
   variable_source_id:
-    identifier: true
+    # identifier: true
     range: integer
   geom_dependency_uuid:
-    identifier: true
+    # identifier: true
     range: integer
   variable_name:
     range: string
   variable_desc:
     range: string
   data_source_uuid:
-    identifier: true
+    # identifier: true
     range: integer
   attr_spec:
     range: string
 
   # DataSource slots:
   org_id:
-    identifier: true
+    # identifier: true
     range: string
     pattern: "^.{0,100}$" # 100 character limit
   org_set_id:
-    identifier: true
+    # identifier: true
     range: string
     pattern: "^.{0,100}$" # 100 character limit
   dataset_name:
@@ -747,9 +805,10 @@ slots:
 enums:
   GenderConceptID:
     permissible_values:
-      8532: # OMOP Concept ID
-        Description: F, Female
+      8532: # OMOP Concept ID, it does result in a warning for having a numeric name.
+        description: F, Female
         meaning: PATO:0000383 # female
-      8507: # OMOP Concept ID
-        Description: M, Male
+      8507: # OMOP Concept ID, it does result in a warning for having a numeric name.
+        description: M, Male
         meaning: PATO:0000384 # male
+

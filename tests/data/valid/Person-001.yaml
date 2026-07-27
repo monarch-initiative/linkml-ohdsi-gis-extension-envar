@@ -1,6 +1,20 @@
 # Example data object
 ---
-id: "001"
-name: foo bar
-primary_email: foo.bar@example.com
-age_in_years: 33
+person_id: 461549441
+gender_concept_id: "8532"
+year_of_birth: 1984
+month_of_birth: 2
+day_of_birth: 24
+birth_datetime:
+race_concept_id: 1546009
+ethnicity_concept_id: 1546045
+location_id: 56413621
+provider_id: 15461564
+care_site_id: 564314
+person_source_value:
+gender_source_value:
+gender_source_concept_id:
+race_source_value: "Abenaki Canadian"
+race_source_concept_id:
+ethnicity_source_value: "American"
+ethnicity_source_concept_id:

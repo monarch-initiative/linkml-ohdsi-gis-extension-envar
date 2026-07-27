@@ -660,6 +660,7 @@ slots:
   gender_concept_id:
     name: gender_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/gender_concept_id
+    description: Concept ID corresponding to an OMOP gender concept.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:gender_concept_id
     owner: Person
@@ -669,6 +670,7 @@ slots:
   year_of_birth:
     name: year_of_birth
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/year_of_birth
+    description: A person's year of birth.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:year_of_birth
     owner: Person
@@ -678,6 +680,7 @@ slots:
   month_of_birth:
     name: month_of_birth
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/month_of_birth
+    description: A person's month of birth.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:month_of_birth
     owner: Person
@@ -687,6 +690,7 @@ slots:
   day_of_birth:
     name: day_of_birth
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/day_of_birth
+    description: A person's day of birth.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:day_of_birth
     owner: Person
@@ -705,6 +709,7 @@ slots:
   race_concept_id:
     name: race_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/race_concept_id
+    description: Concept ID corresponding to an OMOP race concept.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:race_concept_id
     owner: Person
@@ -714,6 +719,7 @@ slots:
   ethnicity_concept_id:
     name: ethnicity_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/ethnicity_concept_id
+    description: Concept ID corresponding to an OMOP ethnicity concept.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:ethnicity_concept_id
     owner: Person
@@ -723,6 +729,7 @@ slots:
   provider_id:
     name: provider_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/provider_id
+    description: Concept ID corresponding to a provider.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:provider_id
     owner: Person
@@ -732,6 +739,7 @@ slots:
   care_site_id:
     name: care_site_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/care_site_id
+    description: Concept ID corresponding to a care site.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:care_site_id
     owner: Person
@@ -761,6 +769,8 @@ slots:
   gender_source_concept_id:
     name: gender_source_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/gender_source_concept_id
+    description: Concept ID corresponding to a gender in the source data if a corresponding
+      concept ID exists. Otherwise 0.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:gender_source_concept_id
     owner: Person
@@ -780,6 +790,8 @@ slots:
   race_source_concept_id:
     name: race_source_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/race_source_concept_id
+    description: Concept ID corresponding to a race in the source data if a corresponding
+      concept ID exists. Otherwise 0.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:race_source_concept_id
     owner: Person
@@ -2259,6 +2271,7 @@ slots:
   Person_gender_concept_id:
     name: Person_gender_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/gender_concept_id
+    description: Concept ID corresponding to an OMOP gender concept.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: gender_concept_id
     domain: Person
@@ -2274,6 +2287,7 @@ slots:
   Person_year_of_birth:
     name: Person_year_of_birth
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/year_of_birth
+    description: A person's year of birth.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: year_of_birth
     domain: Person
@@ -2289,6 +2303,7 @@ slots:
   Person_race_concept_id:
     name: Person_race_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/race_concept_id
+    description: Concept ID corresponding to an OMOP race concept.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: race_concept_id
     domain: Person
@@ -2304,6 +2319,7 @@ slots:
   Person_ethnicity_concept_id:
     name: Person_ethnicity_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/ethnicity_concept_id
+    description: Concept ID corresponding to an OMOP ethnicity concept.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: ethnicity_concept_id
     domain: Person
@@ -2988,7 +3004,7 @@ classes:
     class_uri: linkml_ohdsi_gis_extension_envar:Concept
 metamodel_version: 1.11.0
 source_file: linkml_ohdsi_gis_extension_envar.yaml
-source_file_date: '2026-07-27T22:46:06'
-source_file_size: 23166
-generation_date: '2026-07-27T22:46:15'
+source_file_date: '2026-07-27T23:20:13'
+source_file_size: 23864
+generation_date: '2026-07-27T23:20:26'
 

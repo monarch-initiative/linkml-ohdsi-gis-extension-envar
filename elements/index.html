@@ -560,16 +560,100 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="NamedThing/">NamedThing</a></td>
-<td>A generic grouping for any identifiable entity</td>
+<td><a href="AttrIndex/">AttrIndex</a></td>
+<td>A class representing an index of attributes from a data source</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Person/">Person</a></td>
-<td>Represents a Person</td>
+<td><a href="AttrTemplate/">AttrTemplate</a></td>
+<td>A class representing a template for mapping attributes from a data source</td>
 </tr>
 <tr>
-<td><a href="PersonCollection/">PersonCollection</a></td>
-<td>A holder for Person objects</td>
+<td><a href="Concept/">Concept</a></td>
+<td>A class representing an OMOP concept</td>
+</tr>
+<tr>
+<td><a href="DataSource/">DataSource</a></td>
+<td>A class representing metadata about the data source</td>
+</tr>
+<tr>
+<td><a href="ExternalExposure/">ExternalExposure</a></td>
+<td>A foundational class for integration of spatial, environmental, and sociodemo...</td>
+</tr>
+<tr>
+<td><a href="Geometry/">Geometry</a></td>
+<td>Geometry is an abstract type</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="GeometryCollection/">GeometryCollection</a></td>
+<td>A GeometryCollection is a heterogeneous (mixed) collection of geometries</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LinearRing/">LinearRing</a></td>
+<td>A LinearRing is a LineString which is both closed and simple</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LineString/">LineString</a></td>
+<td>A LineString is a 1-dimensional line formed by a contiguous sequence of line ...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MultiLineString/">MultiLineString</a></td>
+<td>A MultiLineString is a collection of LineStrings</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MultiPoint/">MultiPoint</a></td>
+<td>A MultiPoint is a collection of Points</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MultiPolygon/">MultiPolygon</a></td>
+<td>A MultiPolygon is a collection of non-overlapping, non-adjacent Polygons</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Point/">Point</a></td>
+<td>A Point is a 0-dimensional geometry that represents a single location in coor...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Polygon/">Polygon</a></td>
+<td>A Polygon is a 2-dimensional planar region, delimited by an exterior boundary...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PolyhedralSurface/">PolyhedralSurface</a></td>
+<td>A PolyhedralSurface is a contiguous collection of patches or facets which sha...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TIN/">TIN</a></td>
+<td>A TIN is a collection of non-overlapping Triangles representing a Triangulate...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Triangle/">Triangle</a></td>
+<td>A Triangle is a polygon defined by three distinct non-collinear vertices</td>
+</tr>
+<tr>
+<td><a href="GeomIndex/">GeomIndex</a></td>
+<td>A class representing an index of geometries from a data source</td>
+</tr>
+<tr>
+<td><a href="GeomTemplate/">GeomTemplate</a></td>
+<td>A class representing a template for mapping geometries from a data source</td>
+</tr>
+<tr>
+<td><a href="Location/">Location</a></td>
+<td>A class representing a physical location</td>
+</tr>
+<tr>
+<td><a href="LocationHistory/">LocationHistory</a></td>
+<td>A class for storing location history</td>
+</tr>
+<tr>
+<td><a href="LocationMap/">LocationMap</a></td>
+<td>A class representing the locations mapped to address points</td>
+</tr>
+<tr>
+<td><a href="Person/">Person</a></td>
+<td>A class representing a person</td>
+</tr>
+<tr>
+<td><a href="VariableSource/">VariableSource</a></td>
+<td>A class representing metadata about the variables in the data source</td>
 </tr>
 </tbody>
 </table>
@@ -583,36 +667,456 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="age_in_years/">age_in_years</a></td>
-<td>Number of years since birth</td>
-</tr>
-<tr>
-<td><a href="birth_date/">birth_date</a></td>
-<td>Date on which a person is born</td>
-</tr>
-<tr>
-<td><a href="description/">description</a></td>
-<td>A human-readable description for a thing</td>
-</tr>
-<tr>
-<td><a href="id/">id</a></td>
-<td>A unique identifier for a thing</td>
-</tr>
-<tr>
-<td><a href="name/">name</a></td>
-<td>A human-readable name for a thing</td>
-</tr>
-<tr>
-<td><a href="people/">people</a></td>
+<td><a href="address_1/">address_1</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="primary_email/">primary_email</a></td>
-<td>The main email address of a person</td>
+<td><a href="address_2/">address_2</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="vital_status/">vital_status</a></td>
-<td>living or dead status</td>
+<td><a href="address_point/">address_point</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_concept_id/">attr_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_end_date/">attr_end_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_index_id/">attr_index_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_of_geom_index_id/">attr_of_geom_index_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_record_id/">attr_record_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_source_concept_id/">attr_source_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_source_value/">attr_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_spec/">attr_spec</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="attr_start_date/">attr_start_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="birth_datetime/">birth_datetime</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="boundary_type/">boundary_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="care_site_id/">care_site_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="city/">city</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="concept_class_id/">concept_class_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="concept_code/">concept_code</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="concept_id/">concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="concept_name/">concept_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="country_concept_id/">country_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="country_source_value/">country_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="county/">county</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="data_source_id/">data_source_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="data_source_uuid/">data_source_uuid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="data_type_id/">data_type_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="data_type_name/">data_type_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="database_schema/">database_schema</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dataset_name/">dataset_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dataset_version/">dataset_version</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="day_of_birth/">day_of_birth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="documentation_url/">documentation_url</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="domain_id/">domain_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dose_unit_source_value/">dose_unit_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="download_auth/">download_auth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="download_data_standard/">download_data_standard</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="download_filename/">download_filename</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="download_method/">download_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="download_subtype/">download_subtype</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="download_url/">download_url</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="end_date/">end_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="entity_id/">entity_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ethnicity_concept_id/">ethnicity_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ethnicity_source_concept_id/">ethnicity_source_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ethnicity_source_value/">ethnicity_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_concept_id/">exposure_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_end_date/">exposure_end_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_end_datetime/">exposure_end_datetime</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_relationship_concept_id/">exposure_relationship_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_relationship_source_value/">exposure_relationship_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_source_concept_id/">exposure_source_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_source_value/">exposure_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_start_date/">exposure_start_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_start_datetime/">exposure_start_datetime</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exposure_type_concept_id/">exposure_type_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="external_exposure_id/">external_exposure_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gender_concept_id/">gender_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gender_source_concept_id/">gender_source_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gender_source_value/">gender_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_dependency_uuid/">geom_dependency_uuid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_index_id/">geom_index_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_local_epsg/">geom_local_epsg</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_local_value/">geom_local_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_name/">geom_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_record_id/">geom_record_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_source_coding/">geom_source_coding</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_source_value/">geom_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_spec/">geom_spec</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_type/">geom_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_type_concept_id/">geom_type_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_type_source_value/">geom_type_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geom_wgs84/">geom_wgs84</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="has_attributes/">has_attributes</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="invalid_reason/">invalid_reason</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="latitude/">latitude</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="location_id/">location_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="location_source_value/">location_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="longitude/">longitude</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="modifier_source_value/">modifier_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="month_of_birth/">month_of_birth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="operator_concept_id/">operator_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="org_id/">org_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="org_set_id/">org_set_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="person_id/">person_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="person_source_value/">person_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="provider_id/">provider_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="qualifier_concept_id/">qualifier_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="qualifier_source_value/">qualifier_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="quantity/">quantity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="race_concept_id/">race_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="race_source_concept_id/">race_source_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="race_source_value/">race_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="relationship_type_concept_id/">relationship_type_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="standard_concept/">standard_concept</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="start_date/">start_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="state/">state</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="table_desc/">table_desc</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="table_name/">table_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="unit_concept_id/">unit_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="unit_source_value/">unit_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="valid_end_date/">valid_end_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="valid_start_date/">valid_start_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="value_as_concept_id/">value_as_concept_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="value_as_number/">value_as_number</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="value_as_string/">value_as_string</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="value_source_value/">value_source_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="variable_desc/">variable_desc</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="variable_name/">variable_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="variable_source_id/">variable_source_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="variable_source_record_id/">variable_source_record_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="vocabulary_id/">vocabulary_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="year_of_birth/">year_of_birth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="zip/">zip</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -626,8 +1130,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="PersonStatus/">PersonStatus</a></td>
-<td>The vital status of a person</td>
+<td><a href="GenderConceptID/">GenderConceptID</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>

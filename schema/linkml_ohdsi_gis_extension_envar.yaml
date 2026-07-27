@@ -298,188 +298,2697 @@ types:
     uri: xsd:string
     repr: str
 enums:
-  PersonStatus:
-    name: PersonStatus
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/PersonStatus
-    description: The vital status of a person
+  GenderConceptID:
+    name: GenderConceptID
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/GenderConceptID
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     permissible_values:
-      ALIVE:
-        text: ALIVE
-        description: the person is living
-        meaning: PATO:0001421
-      DEAD:
-        text: DEAD
-        description: the person is deceased
-        meaning: PATO:0001422
-      UNKNOWN:
-        text: UNKNOWN
-        description: the vital status is not known
-        todos:
-        - map this to an ontology
+      '8532':
+        text: '8532'
+        description: F, Female
+        meaning: PATO:0000383
+      '8507':
+        text: '8507'
+        description: M, Male
+        meaning: PATO:0000384
 slots:
-  id:
-    name: id
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/id
-    description: A unique identifier for a thing
+  external_exposure_id:
+    name: external_exposure_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/external_exposure_id
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    mappings:
-    - schema:identifier
-    slot_uri: schema:identifier
-    identifier: true
-    owner: NamedThing
+    slot_uri: linkml_ohdsi_gis_extension_envar:external_exposure_id
+    owner: ExternalExposure
     domain_of:
-    - NamedThing
-    range: uriorcurie
-    required: true
-  name:
-    name: name
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/name
-    description: A human-readable name for a thing
+    - ExternalExposure
+    range: integer
+  location_id:
+    name: location_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/location_id
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    mappings:
-    - schema:name
-    slot_uri: schema:name
-    owner: NamedThing
-    domain_of:
-    - NamedThing
-    range: string
-  description:
-    name: description
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/description
-    description: A human-readable description for a thing
-    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    mappings:
-    - schema:description
-    slot_uri: schema:description
-    owner: NamedThing
-    domain_of:
-    - NamedThing
-    range: string
-  primary_email:
-    name: primary_email
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/primary_email
-    description: The main email address of a person
-    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    mappings:
-    - schema:email
-    slot_uri: schema:email
+    slot_uri: linkml_ohdsi_gis_extension_envar:location_id
     owner: Person
     domain_of:
+    - ExternalExposure
+    - LocationHistory
+    - LocationMap
+    - Location
     - Person
-    range: string
-  birth_date:
-    name: birth_date
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/birth_date
-    description: Date on which a person is born
+    range: integer
+  person_id:
+    name: person_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/person_id
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    mappings:
-    - schema:birthDate
-    slot_uri: schema:birthDate
+    slot_uri: linkml_ohdsi_gis_extension_envar:person_id
     owner: Person
     domain_of:
+    - ExternalExposure
     - Person
+    range: integer
+  exposure_concept_id:
+    name: exposure_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_concept_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: integer
+  exposure_start_date:
+    name: exposure_start_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_start_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_start_date
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
     range: date
-  age_in_years:
-    name: age_in_years
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/age_in_years
-    description: Number of years since birth
+  exposure_start_datetime:
+    name: exposure_start_datetime
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_start_datetime
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    slot_uri: linkml_ohdsi_gis_extension_envar:age_in_years
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_start_datetime
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: datetime
+  exposure_end_date:
+    name: exposure_end_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_end_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_end_date
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: date
+  exposure_end_datetime:
+    name: exposure_end_datetime
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_end_datetime
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_end_datetime
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: datetime
+  exposure_type_concept_id:
+    name: exposure_type_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_type_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_type_concept_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: integer
+  exposure_relationship_concept_id:
+    name: exposure_relationship_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_relationship_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_relationship_concept_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: integer
+  exposure_source_concept_id:
+    name: exposure_source_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_source_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_source_concept_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: integer
+  exposure_source_value:
+    name: exposure_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_source_value
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: string
+  exposure_relationship_source_value:
+    name: exposure_relationship_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_relationship_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_relationship_source_value
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: string
+  dose_unit_source_value:
+    name: dose_unit_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dose_unit_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:dose_unit_source_value
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: string
+  quantity:
+    name: quantity
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/quantity
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:quantity
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: float
+  modifier_source_value:
+    name: modifier_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/modifier_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:modifier_source_value
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: string
+  operator_concept_id:
+    name: operator_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/operator_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:operator_concept_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    range: integer
+  value_as_number:
+    name: value_as_number
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/value_as_number
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:value_as_number
+    owner: AttrTemplate
+    domain_of:
+    - ExternalExposure
+    - AttrTemplate
+    range: float
+  value_as_concept_id:
+    name: value_as_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/value_as_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:value_as_concept_id
+    owner: AttrTemplate
+    domain_of:
+    - ExternalExposure
+    - AttrTemplate
+    range: integer
+  unit_concept_id:
+    name: unit_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/unit_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:unit_concept_id
+    owner: AttrTemplate
+    domain_of:
+    - ExternalExposure
+    - AttrTemplate
+    range: integer
+  relationship_type_concept_id:
+    name: relationship_type_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/relationship_type_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:relationship_type_concept_id
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    range: integer
+  domain_id:
+    name: domain_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/domain_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:domain_id
+    owner: Concept
+    domain_of:
+    - LocationHistory
+    - Concept
+    range: string
+    pattern: ^.{0,20}$
+  entity_id:
+    name: entity_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/entity_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:entity_id
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    range: integer
+  start_date:
+    name: start_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/start_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:start_date
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    range: date
+  end_date:
+    name: end_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/end_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:end_date
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    range: date
+  address_1:
+    name: address_1
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/address_1
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:address_1
+    owner: Location
+    domain_of:
+    - Location
+    range: string
+    pattern: ^.{0,50}$
+  address_2:
+    name: address_2
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/address_2
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:address_2
+    owner: Location
+    domain_of:
+    - Location
+    range: string
+    pattern: ^.{0,50}$
+  city:
+    name: city
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/city
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:city
+    owner: Location
+    domain_of:
+    - Location
+    range: string
+    pattern: ^.{0,50}$
+  state:
+    name: state
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/state
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:state
+    owner: Location
+    domain_of:
+    - Location
+    range: string
+    pattern: ^.{0,2}$
+  zip:
+    name: zip
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/zip
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:zip
+    owner: Location
+    domain_of:
+    - Location
+    range: string
+    pattern: ^.{3,9}$
+  county:
+    name: county
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/county
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:county
+    owner: Location
+    domain_of:
+    - Location
+    range: string
+    pattern: ^.{0,20}$
+  location_source_value:
+    name: location_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/location_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:location_source_value
+    owner: Location
+    domain_of:
+    - Location
+    range: string
+    pattern: ^.{0,50}$
+  country_concept_id:
+    name: country_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/country_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:country_concept_id
+    owner: Location
+    domain_of:
+    - Location
+    range: integer
+  country_source_value:
+    name: country_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/country_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:country_source_value
+    owner: Location
+    domain_of:
+    - Location
+    range: string
+  latitude:
+    name: latitude
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/latitude
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:latitude
+    owner: Location
+    domain_of:
+    - Location
+    range: float
+    minimum_value: -90
+    maximum_value: 90
+  longitude:
+    name: longitude
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/longitude
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:longitude
+    owner: Location
+    domain_of:
+    - Location
+    range: float
+    minimum_value: -180
+    maximum_value: 180
+  gender_concept_id:
+    name: gender_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/gender_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:gender_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    range: GenderConceptID
+  year_of_birth:
+    name: year_of_birth
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/year_of_birth
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:year_of_birth
     owner: Person
     domain_of:
     - Person
     range: integer
-  vital_status:
-    name: vital_status
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/vital_status
-    description: living or dead status
+  month_of_birth:
+    name: month_of_birth
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/month_of_birth
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    slot_uri: linkml_ohdsi_gis_extension_envar:vital_status
+    slot_uri: linkml_ohdsi_gis_extension_envar:month_of_birth
     owner: Person
     domain_of:
     - Person
-    range: PersonStatus
-  personCollection__people:
-    name: personCollection__people
+    range: integer
+  day_of_birth:
+    name: day_of_birth
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/day_of_birth
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    slot_uri: linkml_ohdsi_gis_extension_envar:people
-    alias: people
-    owner: PersonCollection
+    slot_uri: linkml_ohdsi_gis_extension_envar:day_of_birth
+    owner: Person
     domain_of:
-    - PersonCollection
-    range: Person
-    multivalued: true
+    - Person
+    range: integer
+  birth_datetime:
+    name: birth_datetime
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/birth_datetime
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:birth_datetime
+    owner: Person
+    domain_of:
+    - Person
+    range: datetime
+  race_concept_id:
+    name: race_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/race_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:race_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  ethnicity_concept_id:
+    name: ethnicity_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/ethnicity_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:ethnicity_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  provider_id:
+    name: provider_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/provider_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:provider_id
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  care_site_id:
+    name: care_site_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/care_site_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:care_site_id
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  person_source_value:
+    name: person_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/person_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:person_source_value
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    pattern: ^.{0,50}$
+  gender_source_value:
+    name: gender_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/gender_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:gender_source_value
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    pattern: ^.{0,50}$
+  gender_source_concept_id:
+    name: gender_source_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/gender_source_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:gender_source_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  race_source_value:
+    name: race_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/race_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:race_source_value
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    pattern: ^.{0,50}$
+  race_source_concept_id:
+    name: race_source_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/race_source_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:race_source_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  ethnicity_source_value:
+    name: ethnicity_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/ethnicity_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:ethnicity_source_value
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    pattern: ^.{0,50}$
+  ethnicity_source_concept_id:
+    name: ethnicity_source_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/ethnicity_source_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:ethnicity_source_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  concept_id:
+    name: concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:concept_id
+    owner: Concept
+    domain_of:
+    - Concept
+    range: integer
+  concept_name:
+    name: concept_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/concept_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:concept_name
+    owner: Concept
+    domain_of:
+    - Concept
+    range: string
+    pattern: ^.{0,255}$
+  vocabulary_id:
+    name: vocabulary_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/vocabulary_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:vocabulary_id
+    owner: Concept
+    domain_of:
+    - Concept
+    range: string
+    pattern: ^.{0,20}$
+  concept_class_id:
+    name: concept_class_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/concept_class_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:concept_class_id
+    owner: Concept
+    domain_of:
+    - Concept
+    range: string
+    pattern: ^.{0,20}$
+  standard_concept:
+    name: standard_concept
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/standard_concept
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:standard_concept
+    owner: Concept
+    domain_of:
+    - Concept
+    range: string
+    pattern: ^.$
+  concept_code:
+    name: concept_code
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/concept_code
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:concept_code
+    owner: Concept
+    domain_of:
+    - Concept
+    range: string
+    pattern: ^.{0,50}$
+  valid_start_date:
+    name: valid_start_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/valid_start_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:valid_start_date
+    owner: Concept
+    domain_of:
+    - Concept
+    range: date
+  valid_end_date:
+    name: valid_end_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/valid_end_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:valid_end_date
+    owner: Concept
+    domain_of:
+    - Concept
+    range: date
+  invalid_reason:
+    name: invalid_reason
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/invalid_reason
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:invalid_reason
+    owner: Concept
+    domain_of:
+    - Concept
+    range: string
+    pattern: ^.$
+  geom_record_id:
+    name: geom_record_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_record_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_record_id
+    owner: AttrTemplate
+    domain_of:
+    - GeomTemplate
+    - AttrTemplate
+    range: integer
+  geom_name:
+    name: geom_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_name
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    range: string
+  geom_source_coding:
+    name: geom_source_coding
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_source_coding
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_source_coding
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    range: string
+  geom_source_value:
+    name: geom_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_source_value
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    range: string
+  geom_wgs84:
+    name: geom_wgs84
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_wgs84
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_wgs84
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    range: Geometry
     inlined: true
     inlined_as_list: true
-  Person_primary_email:
-    name: Person_primary_email
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/primary_email
-    description: The main email address of a person
+  geom_local_epsg:
+    name: geom_local_epsg
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_local_epsg
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    mappings:
-    - schema:email
-    is_a: primary_email
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_local_epsg
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    range: integer
+  geom_local_value:
+    name: geom_local_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_local_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_local_value
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    range: Geometry
+    inlined: true
+    inlined_as_list: true
+  attr_record_id:
+    name: attr_record_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_record_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_record_id
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: integer
+  variable_source_record_id:
+    name: variable_source_record_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_record_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_source_record_id
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: integer
+  attr_concept_id:
+    name: attr_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_concept_id
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: integer
+  attr_start_date:
+    name: attr_start_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_start_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_start_date
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: date
+  attr_end_date:
+    name: attr_end_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_end_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_end_date
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: date
+  value_as_string:
+    name: value_as_string
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/value_as_string
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:value_as_string
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: string
+  unit_source_value:
+    name: unit_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/unit_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:unit_source_value
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: string
+  qualifier_concept_id:
+    name: qualifier_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/qualifier_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:qualifier_concept_id
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: integer
+  qualifier_source_value:
+    name: qualifier_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/qualifier_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:qualifier_source_value
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: string
+  attr_source_concept_id:
+    name: attr_source_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_source_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_source_concept_id
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: integer
+  attr_source_value:
+    name: attr_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_source_value
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: string
+  value_source_value:
+    name: value_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/value_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:value_source_value
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    range: string
+  attr_index_id:
+    name: attr_index_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_index_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_index_id
+    owner: AttrIndex
+    domain_of:
+    - AttrIndex
+    range: float
+  attr_of_geom_index_id:
+    name: attr_of_geom_index_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_of_geom_index_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_of_geom_index_id
+    owner: AttrIndex
+    domain_of:
+    - AttrIndex
+    range: float
+  database_schema:
+    name: database_schema
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/database_schema
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:database_schema
+    owner: GeomIndex
+    domain_of:
+    - AttrIndex
+    - GeomIndex
+    range: string
+    pattern: ^.{0,255}$
+  table_name:
+    name: table_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:table_name
+    owner: GeomIndex
+    domain_of:
+    - AttrIndex
+    - GeomIndex
+    range: string
+    pattern: ^.{0,255}$
+  data_source_id:
+    name: data_source_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_source_id
+    owner: GeomIndex
+    domain_of:
+    - AttrIndex
+    - GeomIndex
+    range: float
+  geom_index_id:
+    name: geom_index_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_index_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_index_id
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    range: float
+  data_type_id:
+    name: data_type_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_type_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_type_id
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    range: float
+  data_type_name:
+    name: data_type_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_type_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_type_name
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    range: string
+    pattern: ^.{0,255}$
+  geom_type_concept_id:
+    name: geom_type_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_type_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_type_concept_id
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    range: float
+  geom_type_source_value:
+    name: geom_type_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_type_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_type_source_value
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    range: string
+    pattern: ^.{0,255}$
+  table_desc:
+    name: table_desc
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_desc
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:table_desc
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    range: string
+    pattern: ^.{0,255}$
+  variable_source_id:
+    name: variable_source_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_source_id
+    owner: VariableSource
+    domain_of:
+    - AttrIndex
+    - VariableSource
+    range: integer
+  geom_dependency_uuid:
+    name: geom_dependency_uuid
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_dependency_uuid
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_dependency_uuid
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    range: integer
+  variable_name:
+    name: variable_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_name
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    range: string
+  variable_desc:
+    name: variable_desc
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_desc
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_desc
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    range: string
+  data_source_uuid:
+    name: data_source_uuid
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_uuid
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_source_uuid
+    owner: DataSource
+    domain_of:
+    - VariableSource
+    - DataSource
+    range: integer
+  attr_spec:
+    name: attr_spec
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_spec
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_spec
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    range: string
+  org_id:
+    name: org_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/org_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:org_id
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  org_set_id:
+    name: org_set_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/org_set_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:org_set_id
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  dataset_name:
+    name: dataset_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dataset_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:dataset_name
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  dataset_version:
+    name: dataset_version
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dataset_version
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:dataset_version
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  geom_type:
+    name: geom_type
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_type
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_type
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  geom_spec:
+    name: geom_spec
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_spec
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_spec
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+  boundary_type:
+    name: boundary_type
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/boundary_type
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:boundary_type
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  has_attributes:
+    name: has_attributes
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/has_attributes
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:has_attributes
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: integer
+  download_method:
+    name: download_method
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_method
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_method
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  download_subtype:
+    name: download_subtype
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_subtype
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_subtype
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  download_data_standard:
+    name: download_data_standard
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_data_standard
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_data_standard
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  download_filename:
+    name: download_filename
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_filename
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_filename
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  download_url:
+    name: download_url
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_url
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_url
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,255}$
+  download_auth:
+    name: download_auth
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_auth
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_auth
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,100}$
+  documentation_url:
+    name: documentation_url
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/documentation_url
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:documentation_url
+    owner: DataSource
+    domain_of:
+    - DataSource
+    range: string
+    pattern: ^.{0,255}$
+  address_point:
+    name: address_point
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/address_point
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slot_uri: linkml_ohdsi_gis_extension_envar:address_point
+    owner: LocationMap
+    domain_of:
+    - LocationMap
+    range: string
+  ExternalExposure_external_exposure_id:
+    name: ExternalExposure_external_exposure_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/external_exposure_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: external_exposure_id
+    domain: ExternalExposure
+    slot_uri: linkml_ohdsi_gis_extension_envar:external_exposure_id
+    key: true
+    alias: external_exposure_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    is_usage_slot: true
+    usage_slot_name: external_exposure_id
+    range: integer
+    required: true
+  ExternalExposure_location_id:
+    name: ExternalExposure_location_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/location_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: location_id
+    domain: ExternalExposure
+    slot_uri: linkml_ohdsi_gis_extension_envar:location_id
+    alias: location_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    is_usage_slot: true
+    usage_slot_name: location_id
+    range: integer
+    required: true
+  ExternalExposure_person_id:
+    name: ExternalExposure_person_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/person_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: person_id
+    domain: ExternalExposure
+    slot_uri: linkml_ohdsi_gis_extension_envar:person_id
+    alias: person_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    is_usage_slot: true
+    usage_slot_name: person_id
+    range: integer
+    required: true
+  ExternalExposure_exposure_concept_id:
+    name: ExternalExposure_exposure_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: exposure_concept_id
+    domain: ExternalExposure
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_concept_id
+    alias: exposure_concept_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    is_usage_slot: true
+    usage_slot_name: exposure_concept_id
+    range: integer
+    required: true
+  ExternalExposure_exposure_start_date:
+    name: ExternalExposure_exposure_start_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_start_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: exposure_start_date
+    domain: ExternalExposure
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_start_date
+    alias: exposure_start_date
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    is_usage_slot: true
+    usage_slot_name: exposure_start_date
+    range: date
+    required: true
+  ExternalExposure_exposure_end_date:
+    name: ExternalExposure_exposure_end_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_end_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: exposure_end_date
+    domain: ExternalExposure
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_end_date
+    alias: exposure_end_date
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    is_usage_slot: true
+    usage_slot_name: exposure_end_date
+    range: date
+    required: true
+  ExternalExposure_exposure_type_concept_id:
+    name: ExternalExposure_exposure_type_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_type_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: exposure_type_concept_id
+    domain: ExternalExposure
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_type_concept_id
+    alias: exposure_type_concept_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    is_usage_slot: true
+    usage_slot_name: exposure_type_concept_id
+    range: integer
+    required: true
+  ExternalExposure_exposure_relationship_concept_id:
+    name: ExternalExposure_exposure_relationship_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/exposure_relationship_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: exposure_relationship_concept_id
+    domain: ExternalExposure
+    slot_uri: linkml_ohdsi_gis_extension_envar:exposure_relationship_concept_id
+    alias: exposure_relationship_concept_id
+    owner: ExternalExposure
+    domain_of:
+    - ExternalExposure
+    is_usage_slot: true
+    usage_slot_name: exposure_relationship_concept_id
+    range: integer
+    required: true
+  LocationHistory_location_id:
+    name: LocationHistory_location_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/location_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: location_id
+    domain: LocationHistory
+    slot_uri: linkml_ohdsi_gis_extension_envar:location_id
+    alias: location_id
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    is_usage_slot: true
+    usage_slot_name: location_id
+    range: integer
+    required: true
+  LocationHistory_relationship_type_concept_id:
+    name: LocationHistory_relationship_type_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/relationship_type_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: relationship_type_concept_id
+    domain: LocationHistory
+    slot_uri: linkml_ohdsi_gis_extension_envar:relationship_type_concept_id
+    alias: relationship_type_concept_id
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    is_usage_slot: true
+    usage_slot_name: relationship_type_concept_id
+    range: integer
+    required: true
+  LocationHistory_domain_id:
+    name: LocationHistory_domain_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/domain_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: domain_id
+    domain: LocationHistory
+    slot_uri: linkml_ohdsi_gis_extension_envar:domain_id
+    alias: domain_id
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    is_usage_slot: true
+    usage_slot_name: domain_id
+    range: string
+    required: true
+    pattern: ^.{0,20}$
+  LocationHistory_entity_id:
+    name: LocationHistory_entity_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/entity_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: entity_id
+    domain: LocationHistory
+    slot_uri: linkml_ohdsi_gis_extension_envar:entity_id
+    alias: entity_id
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    is_usage_slot: true
+    usage_slot_name: entity_id
+    range: integer
+    required: true
+  LocationHistory_start_date:
+    name: LocationHistory_start_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/start_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: start_date
+    domain: LocationHistory
+    slot_uri: linkml_ohdsi_gis_extension_envar:start_date
+    alias: start_date
+    owner: LocationHistory
+    domain_of:
+    - LocationHistory
+    is_usage_slot: true
+    usage_slot_name: start_date
+    range: date
+    required: true
+  LocationMap_location_id:
+    name: LocationMap_location_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/location_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: location_id
+    domain: LocationMap
+    slot_uri: linkml_ohdsi_gis_extension_envar:location_id
+    key: true
+    alias: location_id
+    owner: LocationMap
+    domain_of:
+    - LocationMap
+    is_usage_slot: true
+    usage_slot_name: location_id
+    range: integer
+    required: true
+  GeomTemplate_geom_record_id:
+    name: GeomTemplate_geom_record_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_record_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: geom_record_id
+    domain: GeomTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_record_id
+    key: true
+    alias: geom_record_id
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    is_usage_slot: true
+    usage_slot_name: geom_record_id
+    range: integer
+    required: true
+  GeomTemplate_geom_name:
+    name: GeomTemplate_geom_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: geom_name
+    domain: GeomTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_name
+    alias: geom_name
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    is_usage_slot: true
+    usage_slot_name: geom_name
+    range: string
+    required: true
+  GeomTemplate_geom_source_coding:
+    name: GeomTemplate_geom_source_coding
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_source_coding
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: geom_source_coding
+    domain: GeomTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_source_coding
+    alias: geom_source_coding
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    is_usage_slot: true
+    usage_slot_name: geom_source_coding
+    range: string
+    required: true
+  GeomTemplate_geom_source_value:
+    name: GeomTemplate_geom_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: geom_source_value
+    domain: GeomTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_source_value
+    alias: geom_source_value
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    is_usage_slot: true
+    usage_slot_name: geom_source_value
+    range: string
+    required: true
+  GeomTemplate_geom_local_epsg:
+    name: GeomTemplate_geom_local_epsg
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_local_epsg
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: geom_local_epsg
+    domain: GeomTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_local_epsg
+    alias: geom_local_epsg
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    is_usage_slot: true
+    usage_slot_name: geom_local_epsg
+    range: integer
+    required: true
+  GeomTemplate_geom_local_value:
+    name: GeomTemplate_geom_local_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_local_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: geom_local_value
+    domain: GeomTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_local_value
+    alias: geom_local_value
+    owner: GeomTemplate
+    domain_of:
+    - GeomTemplate
+    is_usage_slot: true
+    usage_slot_name: geom_local_value
+    range: Geometry
+    required: true
+    inlined: true
+    inlined_as_list: true
+  AttrTemplate_attr_record_id:
+    name: AttrTemplate_attr_record_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_record_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: attr_record_id
+    domain: AttrTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_record_id
+    key: true
+    alias: attr_record_id
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    is_usage_slot: true
+    usage_slot_name: attr_record_id
+    range: integer
+    required: true
+  AttrTemplate_geom_record_id:
+    name: AttrTemplate_geom_record_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_record_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: geom_record_id
+    domain: AttrTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_record_id
+    alias: geom_record_id
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    is_usage_slot: true
+    usage_slot_name: geom_record_id
+    range: integer
+    required: true
+  AttrTemplate_variable_source_record_id:
+    name: AttrTemplate_variable_source_record_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_record_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: variable_source_record_id
+    domain: AttrTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_source_record_id
+    alias: variable_source_record_id
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    is_usage_slot: true
+    usage_slot_name: variable_source_record_id
+    range: integer
+    required: true
+  AttrTemplate_attr_start_date:
+    name: AttrTemplate_attr_start_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_start_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: attr_start_date
+    domain: AttrTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_start_date
+    alias: attr_start_date
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    is_usage_slot: true
+    usage_slot_name: attr_start_date
+    range: date
+    required: true
+  AttrTemplate_attr_end_date:
+    name: AttrTemplate_attr_end_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_end_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: attr_end_date
+    domain: AttrTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_end_date
+    alias: attr_end_date
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    is_usage_slot: true
+    usage_slot_name: attr_end_date
+    range: date
+    required: true
+  AttrTemplate_attr_source_value:
+    name: AttrTemplate_attr_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: attr_source_value
+    domain: AttrTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_source_value
+    alias: attr_source_value
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    is_usage_slot: true
+    usage_slot_name: attr_source_value
+    range: string
+    required: true
+  AttrTemplate_value_source_value:
+    name: AttrTemplate_value_source_value
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/value_source_value
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: value_source_value
+    domain: AttrTemplate
+    slot_uri: linkml_ohdsi_gis_extension_envar:value_source_value
+    alias: value_source_value
+    owner: AttrTemplate
+    domain_of:
+    - AttrTemplate
+    is_usage_slot: true
+    usage_slot_name: value_source_value
+    range: string
+    required: true
+  AttrIndex_attr_index_id:
+    name: AttrIndex_attr_index_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_index_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: attr_index_id
+    domain: AttrIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_index_id
+    key: true
+    alias: attr_index_id
+    owner: AttrIndex
+    domain_of:
+    - AttrIndex
+    is_usage_slot: true
+    usage_slot_name: attr_index_id
+    range: float
+    required: true
+  AttrIndex_variable_source_id:
+    name: AttrIndex_variable_source_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: variable_source_id
+    domain: AttrIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_source_id
+    alias: variable_source_id
+    owner: AttrIndex
+    domain_of:
+    - AttrIndex
+    is_usage_slot: true
+    usage_slot_name: variable_source_id
+    range: integer
+    required: true
+  AttrIndex_attr_of_geom_index_id:
+    name: AttrIndex_attr_of_geom_index_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_of_geom_index_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: attr_of_geom_index_id
+    domain: AttrIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_of_geom_index_id
+    alias: attr_of_geom_index_id
+    owner: AttrIndex
+    domain_of:
+    - AttrIndex
+    is_usage_slot: true
+    usage_slot_name: attr_of_geom_index_id
+    range: float
+    required: true
+  AttrIndex_database_schema:
+    name: AttrIndex_database_schema
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/database_schema
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: database_schema
+    domain: AttrIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:database_schema
+    alias: database_schema
+    owner: AttrIndex
+    domain_of:
+    - AttrIndex
+    is_usage_slot: true
+    usage_slot_name: database_schema
+    range: string
+    required: true
+    pattern: ^.{0,255}$
+  AttrIndex_table_name:
+    name: AttrIndex_table_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: table_name
+    domain: AttrIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:table_name
+    alias: table_name
+    owner: AttrIndex
+    domain_of:
+    - AttrIndex
+    is_usage_slot: true
+    usage_slot_name: table_name
+    range: string
+    required: true
+    pattern: ^.{0,255}$
+  AttrIndex_data_source_id:
+    name: AttrIndex_data_source_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: data_source_id
+    domain: AttrIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_source_id
+    alias: data_source_id
+    owner: AttrIndex
+    domain_of:
+    - AttrIndex
+    is_usage_slot: true
+    usage_slot_name: data_source_id
+    range: float
+    required: true
+  GeomIndex_geom_index_id:
+    name: GeomIndex_geom_index_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_index_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: geom_index_id
+    domain: GeomIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:geom_index_id
+    key: true
+    alias: geom_index_id
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    is_usage_slot: true
+    usage_slot_name: geom_index_id
+    range: float
+    required: true
+  GeomIndex_data_type_name:
+    name: GeomIndex_data_type_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_type_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: data_type_name
+    domain: GeomIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_type_name
+    alias: data_type_name
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    is_usage_slot: true
+    usage_slot_name: data_type_name
+    range: string
+    required: true
+    pattern: ^.{0,255}$
+  GeomIndex_database_schema:
+    name: GeomIndex_database_schema
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/database_schema
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: database_schema
+    domain: GeomIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:database_schema
+    alias: database_schema
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    is_usage_slot: true
+    usage_slot_name: database_schema
+    range: string
+    required: true
+    pattern: ^.{0,255}$
+  GeomIndex_table_name:
+    name: GeomIndex_table_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: table_name
+    domain: GeomIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:table_name
+    alias: table_name
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    is_usage_slot: true
+    usage_slot_name: table_name
+    range: string
+    required: true
+    pattern: ^.{0,255}$
+  GeomIndex_table_desc:
+    name: GeomIndex_table_desc
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_desc
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: table_desc
+    domain: GeomIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:table_desc
+    alias: table_desc
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    is_usage_slot: true
+    usage_slot_name: table_desc
+    range: string
+    required: true
+    pattern: ^.{0,255}$
+  GeomIndex_data_source_id:
+    name: GeomIndex_data_source_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: data_source_id
+    domain: GeomIndex
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_source_id
+    alias: data_source_id
+    owner: GeomIndex
+    domain_of:
+    - GeomIndex
+    is_usage_slot: true
+    usage_slot_name: data_source_id
+    range: float
+    required: true
+  VariableSource_variable_source_id:
+    name: VariableSource_variable_source_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: variable_source_id
+    domain: VariableSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_source_id
+    key: true
+    alias: variable_source_id
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    is_usage_slot: true
+    usage_slot_name: variable_source_id
+    range: integer
+    required: true
+  VariableSource_variable_name:
+    name: VariableSource_variable_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: variable_name
+    domain: VariableSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_name
+    alias: variable_name
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    is_usage_slot: true
+    usage_slot_name: variable_name
+    range: string
+    required: true
+  VariableSource_variable_desc:
+    name: VariableSource_variable_desc
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_desc
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: variable_desc
+    domain: VariableSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:variable_desc
+    alias: variable_desc
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    is_usage_slot: true
+    usage_slot_name: variable_desc
+    range: string
+    required: true
+  VariableSource_data_source_uuid:
+    name: VariableSource_data_source_uuid
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_uuid
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: data_source_uuid
+    domain: VariableSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_source_uuid
+    alias: data_source_uuid
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    is_usage_slot: true
+    usage_slot_name: data_source_uuid
+    range: integer
+    required: true
+  VariableSource_attr_spec:
+    name: VariableSource_attr_spec
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_spec
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: attr_spec
+    domain: VariableSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:attr_spec
+    alias: attr_spec
+    owner: VariableSource
+    domain_of:
+    - VariableSource
+    is_usage_slot: true
+    usage_slot_name: attr_spec
+    range: string
+    required: true
+  DataSource_data_source_uuid:
+    name: DataSource_data_source_uuid
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_uuid
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: data_source_uuid
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:data_source_uuid
+    key: true
+    alias: data_source_uuid
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: data_source_uuid
+    range: integer
+    required: true
+  DataSource_org_id:
+    name: DataSource_org_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/org_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: org_id
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:org_id
+    alias: org_id
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: org_id
+    range: string
+    required: true
+    pattern: ^.{0,100}$
+  DataSource_org_set_id:
+    name: DataSource_org_set_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/org_set_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: org_set_id
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:org_set_id
+    alias: org_set_id
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: org_set_id
+    range: string
+    required: true
+    pattern: ^.{0,100}$
+  DataSource_dataset_name:
+    name: DataSource_dataset_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dataset_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: dataset_name
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:dataset_name
+    alias: dataset_name
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: dataset_name
+    range: string
+    required: true
+    pattern: ^.{0,100}$
+  DataSource_dataset_version:
+    name: DataSource_dataset_version
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dataset_version
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: dataset_version
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:dataset_version
+    alias: dataset_version
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: dataset_version
+    range: string
+    required: true
+    pattern: ^.{0,100}$
+  DataSource_download_method:
+    name: DataSource_download_method
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_method
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: download_method
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_method
+    alias: download_method
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: download_method
+    range: string
+    required: true
+    pattern: ^.{0,100}$
+  DataSource_download_subtype:
+    name: DataSource_download_subtype
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_subtype
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: download_subtype
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_subtype
+    alias: download_subtype
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: download_subtype
+    range: string
+    required: true
+    pattern: ^.{0,100}$
+  DataSource_download_data_standard:
+    name: DataSource_download_data_standard
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_data_standard
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: download_data_standard
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_data_standard
+    alias: download_data_standard
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: download_data_standard
+    range: string
+    required: true
+    pattern: ^.{0,100}$
+  DataSource_download_filename:
+    name: DataSource_download_filename
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_filename
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: download_filename
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_filename
+    alias: download_filename
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: download_filename
+    range: string
+    required: true
+    pattern: ^.{0,100}$
+  DataSource_download_url:
+    name: DataSource_download_url
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_url
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: download_url
+    domain: DataSource
+    slot_uri: linkml_ohdsi_gis_extension_envar:download_url
+    alias: download_url
+    owner: DataSource
+    domain_of:
+    - DataSource
+    is_usage_slot: true
+    usage_slot_name: download_url
+    range: string
+    required: true
+    pattern: ^.{0,255}$
+  Location_location_id:
+    name: Location_location_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/location_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: location_id
+    domain: Location
+    slot_uri: linkml_ohdsi_gis_extension_envar:location_id
+    key: true
+    alias: location_id
+    owner: Location
+    domain_of:
+    - Location
+    is_usage_slot: true
+    usage_slot_name: location_id
+    range: integer
+    required: true
+  Person_person_id:
+    name: Person_person_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/person_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: person_id
     domain: Person
-    slot_uri: schema:email
-    alias: primary_email
+    slot_uri: linkml_ohdsi_gis_extension_envar:person_id
+    key: true
+    alias: person_id
     owner: Person
     domain_of:
     - Person
     is_usage_slot: true
-    usage_slot_name: primary_email
-    range: string
-    pattern: ^\S+@[\S+\.]+\S+
-classes:
-  NamedThing:
-    name: NamedThing
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/NamedThing
-    description: A generic grouping for any identifiable entity
+    usage_slot_name: person_id
+    range: integer
+    required: true
+  Person_gender_concept_id:
+    name: Person_gender_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/gender_concept_id
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    mappings:
-    - schema:Thing
+    is_a: gender_concept_id
+    domain: Person
+    slot_uri: linkml_ohdsi_gis_extension_envar:gender_concept_id
+    alias: gender_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    is_usage_slot: true
+    usage_slot_name: gender_concept_id
+    range: GenderConceptID
+    required: true
+  Person_year_of_birth:
+    name: Person_year_of_birth
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/year_of_birth
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: year_of_birth
+    domain: Person
+    slot_uri: linkml_ohdsi_gis_extension_envar:year_of_birth
+    alias: year_of_birth
+    owner: Person
+    domain_of:
+    - Person
+    is_usage_slot: true
+    usage_slot_name: year_of_birth
+    range: integer
+    required: true
+  Person_race_concept_id:
+    name: Person_race_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/race_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: race_concept_id
+    domain: Person
+    slot_uri: linkml_ohdsi_gis_extension_envar:race_concept_id
+    alias: race_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    is_usage_slot: true
+    usage_slot_name: race_concept_id
+    range: integer
+    required: true
+  Person_ethnicity_concept_id:
+    name: Person_ethnicity_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/ethnicity_concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: ethnicity_concept_id
+    domain: Person
+    slot_uri: linkml_ohdsi_gis_extension_envar:ethnicity_concept_id
+    alias: ethnicity_concept_id
+    owner: Person
+    domain_of:
+    - Person
+    is_usage_slot: true
+    usage_slot_name: ethnicity_concept_id
+    range: integer
+    required: true
+  Concept_concept_id:
+    name: Concept_concept_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/concept_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: concept_id
+    domain: Concept
+    slot_uri: linkml_ohdsi_gis_extension_envar:concept_id
+    key: true
+    alias: concept_id
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: concept_id
+    range: integer
+    required: true
+  Concept_concept_name:
+    name: Concept_concept_name
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/concept_name
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: concept_name
+    domain: Concept
+    slot_uri: linkml_ohdsi_gis_extension_envar:concept_name
+    alias: concept_name
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: concept_name
+    range: string
+    required: true
+    pattern: ^.{0,255}$
+  Concept_domain_id:
+    name: Concept_domain_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/domain_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: domain_id
+    domain: Concept
+    slot_uri: linkml_ohdsi_gis_extension_envar:domain_id
+    alias: domain_id
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: domain_id
+    range: string
+    required: true
+    pattern: ^.{0,20}$
+  Concept_vocabulary_id:
+    name: Concept_vocabulary_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/vocabulary_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: vocabulary_id
+    domain: Concept
+    slot_uri: linkml_ohdsi_gis_extension_envar:vocabulary_id
+    alias: vocabulary_id
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: vocabulary_id
+    range: string
+    required: true
+    pattern: ^.{0,20}$
+  Concept_concept_class_id:
+    name: Concept_concept_class_id
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/concept_class_id
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: concept_class_id
+    domain: Concept
+    slot_uri: linkml_ohdsi_gis_extension_envar:concept_class_id
+    alias: concept_class_id
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: concept_class_id
+    range: string
+    required: true
+    pattern: ^.{0,20}$
+  Concept_concept_code:
+    name: Concept_concept_code
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/concept_code
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: concept_code
+    domain: Concept
+    slot_uri: linkml_ohdsi_gis_extension_envar:concept_code
+    alias: concept_code
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: concept_code
+    range: string
+    required: true
+    pattern: ^.{0,50}$
+  Concept_valid_start_date:
+    name: Concept_valid_start_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/valid_start_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: valid_start_date
+    domain: Concept
+    slot_uri: linkml_ohdsi_gis_extension_envar:valid_start_date
+    alias: valid_start_date
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: valid_start_date
+    range: date
+    required: true
+  Concept_valid_end_date:
+    name: Concept_valid_end_date
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/valid_end_date
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: valid_end_date
+    domain: Concept
+    slot_uri: linkml_ohdsi_gis_extension_envar:valid_end_date
+    alias: valid_end_date
+    owner: Concept
+    domain_of:
+    - Concept
+    is_usage_slot: true
+    usage_slot_name: valid_end_date
+    range: date
+    required: true
+classes:
+  Geometry:
+    name: Geometry
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/Geometry
+    description: Geometry is an abstract type. Geometry values belong to one of its
+      concrete subtypes which represent various kinds and dimensions of geometric
+      shapes.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    class_uri: linkml_ohdsi_gis_extension_envar:Geometry
+  Point:
+    name: Point
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/Point
+    description: A Point is a 0-dimensional geometry that represents a single location
+      in coordinate space.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:Point
+  LineString:
+    name: LineString
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/LineString
+    description: A LineString is a 1-dimensional line formed by a contiguous sequence
+      of line segments. Each line segment is defined by two points, with the end point
+      of one segment forming the start point of the next segment. An OGC-valid LineString
+      has either zero or two or more points, but PostGIS also allows single-point
+      LineStrings. LineStrings may cross themselves (self-intersect). A LineString
+      is closed if the start and end points are the same. A LineString is simple if
+      it does not self-intersect.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:LineString
+  LinearRing:
+    name: LinearRing
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/LinearRing
+    description: A LinearRing is a LineString which is both closed and simple. The
+      first and last points must be equal, and the line must not self-intersect.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:LinearRing
+  Polygon:
+    name: Polygon
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/Polygon
+    description: A Polygon is a 2-dimensional planar region, delimited by an exterior
+      boundary (the shell) and zero or more interior boundaries (holes). Each boundary
+      is a LinearRing.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:Polygon
+  MultiPoint:
+    name: MultiPoint
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/MultiPoint
+    description: A MultiPoint is a collection of Points.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:MultiPoint
+  MultiLineString:
+    name: MultiLineString
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/MultiLineString
+    description: A MultiLineString is a collection of LineStrings. A MultiLineString
+      is closed if each of its elements is closed.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:MultiLineString
+  MultiPolygon:
+    name: MultiPolygon
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/MultiPolygon
+    description: A MultiPolygon is a collection of non-overlapping, non-adjacent Polygons.
+      Polygons in the collection may touch only at a finite number of points.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:MultiPolygon
+  GeometryCollection:
+    name: GeometryCollection
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/GeometryCollection
+    description: A GeometryCollection is a heterogeneous (mixed) collection of geometries.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:GeometryCollection
+  PolyhedralSurface:
+    name: PolyhedralSurface
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/PolyhedralSurface
+    description: A PolyhedralSurface is a contiguous collection of patches or facets
+      which share some edges. Each patch is a planar Polygon. If the Polygon coordinates
+      have Z ordinates then the surface is 3-dimensional.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:PolyhedralSurface
+  Triangle:
+    name: Triangle
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/Triangle
+    description: A Triangle is a polygon defined by three distinct non-collinear vertices.
+      Because a Triangle is a polygon it is specified by four coordinates, with the
+      first and fourth being equal.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:Triangle
+  TIN:
+    name: TIN
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/TIN
+    description: A TIN is a collection of non-overlapping Triangles representing a
+      Triangulated Irregular Network.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    is_a: Geometry
+    class_uri: linkml_ohdsi_gis_extension_envar:TIN
+  ExternalExposure:
+    name: ExternalExposure
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/ExternalExposure
+    description: A foundational class for integration of spatial, environmental, and
+      sociodemographic data into observational health research workflows.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slots:
-    - id
-    - name
-    - description
-    class_uri: schema:Thing
+    - ExternalExposure_external_exposure_id
+    - ExternalExposure_location_id
+    - ExternalExposure_person_id
+    - ExternalExposure_exposure_concept_id
+    - ExternalExposure_exposure_start_date
+    - exposure_start_datetime
+    - ExternalExposure_exposure_end_date
+    - exposure_end_datetime
+    - ExternalExposure_exposure_type_concept_id
+    - ExternalExposure_exposure_relationship_concept_id
+    - exposure_source_concept_id
+    - exposure_source_value
+    - exposure_relationship_source_value
+    - dose_unit_source_value
+    - quantity
+    - modifier_source_value
+    - operator_concept_id
+    - value_as_number
+    - value_as_concept_id
+    - unit_concept_id
+    slot_usage:
+      external_exposure_id:
+        name: external_exposure_id
+        key: true
+      location_id:
+        name: location_id
+        required: true
+      person_id:
+        name: person_id
+        required: true
+      exposure_concept_id:
+        name: exposure_concept_id
+        required: true
+      exposure_start_date:
+        name: exposure_start_date
+        required: true
+      exposure_end_date:
+        name: exposure_end_date
+        required: true
+      exposure_type_concept_id:
+        name: exposure_type_concept_id
+        required: true
+      exposure_relationship_concept_id:
+        name: exposure_relationship_concept_id
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:ExternalExposure
+  LocationHistory:
+    name: LocationHistory
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/LocationHistory
+    description: A class for storing location history.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - LocationHistory_location_id
+    - LocationHistory_relationship_type_concept_id
+    - LocationHistory_domain_id
+    - LocationHistory_entity_id
+    - LocationHistory_start_date
+    - end_date
+    slot_usage:
+      location_id:
+        name: location_id
+        required: true
+      relationship_type_concept_id:
+        name: relationship_type_concept_id
+        required: true
+      domain_id:
+        name: domain_id
+        required: true
+      entity_id:
+        name: entity_id
+        required: true
+      start_date:
+        name: start_date
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:LocationHistory
+  LocationMap:
+    name: LocationMap
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/LocationMap
+    description: A class representing the locations mapped to address points.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - LocationMap_location_id
+    - address_point
+    slot_usage:
+      location_id:
+        name: location_id
+        key: true
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:LocationMap
+  GeomTemplate:
+    name: GeomTemplate
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/GeomTemplate
+    description: A class representing a template for mapping geometries from a data
+      source.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - GeomTemplate_geom_record_id
+    - GeomTemplate_geom_name
+    - GeomTemplate_geom_source_coding
+    - GeomTemplate_geom_source_value
+    - geom_wgs84
+    - GeomTemplate_geom_local_epsg
+    - GeomTemplate_geom_local_value
+    slot_usage:
+      geom_record_id:
+        name: geom_record_id
+        key: true
+        required: true
+      geom_name:
+        name: geom_name
+        required: true
+      geom_source_coding:
+        name: geom_source_coding
+        required: true
+      geom_source_value:
+        name: geom_source_value
+        required: true
+      geom_local_epsg:
+        name: geom_local_epsg
+        required: true
+      geom_local_value:
+        name: geom_local_value
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:GeomTemplate
+  AttrTemplate:
+    name: AttrTemplate
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/AttrTemplate
+    description: A class representing a template for mapping attributes from a data
+      source.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - AttrTemplate_attr_record_id
+    - AttrTemplate_geom_record_id
+    - AttrTemplate_variable_source_record_id
+    - attr_concept_id
+    - AttrTemplate_attr_start_date
+    - AttrTemplate_attr_end_date
+    - value_as_number
+    - value_as_string
+    - value_as_concept_id
+    - unit_concept_id
+    - unit_source_value
+    - qualifier_concept_id
+    - qualifier_source_value
+    - attr_source_concept_id
+    - AttrTemplate_attr_source_value
+    - AttrTemplate_value_source_value
+    slot_usage:
+      attr_record_id:
+        name: attr_record_id
+        key: true
+        required: true
+      geom_record_id:
+        name: geom_record_id
+        required: true
+      variable_source_record_id:
+        name: variable_source_record_id
+        required: true
+      attr_start_date:
+        name: attr_start_date
+        required: true
+      attr_end_date:
+        name: attr_end_date
+        required: true
+      attr_source_value:
+        name: attr_source_value
+        required: true
+      value_source_value:
+        name: value_source_value
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:AttrTemplate
+  AttrIndex:
+    name: AttrIndex
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/AttrIndex
+    description: A class representing an index of attributes from a data source.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - AttrIndex_attr_index_id
+    - AttrIndex_variable_source_id
+    - AttrIndex_attr_of_geom_index_id
+    - AttrIndex_database_schema
+    - AttrIndex_table_name
+    - AttrIndex_data_source_id
+    slot_usage:
+      attr_index_id:
+        name: attr_index_id
+        key: true
+        required: true
+      variable_source_id:
+        name: variable_source_id
+        required: true
+      attr_of_geom_index_id:
+        name: attr_of_geom_index_id
+        required: true
+      database_schema:
+        name: database_schema
+        required: true
+      table_name:
+        name: table_name
+        required: true
+      data_source_id:
+        name: data_source_id
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:AttrIndex
+  GeomIndex:
+    name: GeomIndex
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/GeomIndex
+    description: A class representing an index of geometries from a data source.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - GeomIndex_geom_index_id
+    - data_type_id
+    - GeomIndex_data_type_name
+    - geom_type_concept_id
+    - geom_type_source_value
+    - GeomIndex_database_schema
+    - GeomIndex_table_name
+    - GeomIndex_table_desc
+    - GeomIndex_data_source_id
+    slot_usage:
+      geom_index_id:
+        name: geom_index_id
+        key: true
+        required: true
+      data_type_name:
+        name: data_type_name
+        required: true
+      database_schema:
+        name: database_schema
+        required: true
+      table_name:
+        name: table_name
+        required: true
+      table_desc:
+        name: table_desc
+        required: true
+      data_source_id:
+        name: data_source_id
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:GeomIndex
+  VariableSource:
+    name: VariableSource
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/VariableSource
+    description: A class representing metadata about the variables in the data source.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - VariableSource_variable_source_id
+    - geom_dependency_uuid
+    - VariableSource_variable_name
+    - VariableSource_variable_desc
+    - VariableSource_data_source_uuid
+    - VariableSource_attr_spec
+    slot_usage:
+      variable_source_id:
+        name: variable_source_id
+        key: true
+        required: true
+      variable_name:
+        name: variable_name
+        required: true
+      variable_desc:
+        name: variable_desc
+        required: true
+      data_source_uuid:
+        name: data_source_uuid
+        required: true
+      attr_spec:
+        name: attr_spec
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:VariableSource
+  DataSource:
+    name: DataSource
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/DataSource
+    description: A class representing metadata about the data source.
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - DataSource_data_source_uuid
+    - DataSource_org_id
+    - DataSource_org_set_id
+    - DataSource_dataset_name
+    - DataSource_dataset_version
+    - geom_type
+    - geom_spec
+    - boundary_type
+    - has_attributes
+    - DataSource_download_method
+    - DataSource_download_subtype
+    - DataSource_download_data_standard
+    - DataSource_download_filename
+    - DataSource_download_url
+    - download_auth
+    - documentation_url
+    slot_usage:
+      data_source_uuid:
+        name: data_source_uuid
+        key: true
+        required: true
+      org_id:
+        name: org_id
+        required: true
+      org_set_id:
+        name: org_set_id
+        required: true
+      dataset_name:
+        name: dataset_name
+        required: true
+      dataset_version:
+        name: dataset_version
+        required: true
+      download_method:
+        name: download_method
+        required: true
+      download_subtype:
+        name: download_subtype
+        required: true
+      download_data_standard:
+        name: download_data_standard
+        required: true
+      download_filename:
+        name: download_filename
+        required: true
+      download_url:
+        name: download_url
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:DataSource
+  Location:
+    name: Location
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/Location
+    description: A class representing a physical location
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    slots:
+    - Location_location_id
+    - address_1
+    - address_2
+    - city
+    - state
+    - zip
+    - county
+    - location_source_value
+    - country_concept_id
+    - country_source_value
+    - latitude
+    - longitude
+    slot_usage:
+      location_id:
+        name: location_id
+        key: true
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:Location
   Person:
     name: Person
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/Person
-    description: Represents a Person
+    description: A class representing a person
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    is_a: NamedThing
     slots:
-    - id
-    - name
-    - description
-    - Person_primary_email
-    - birth_date
-    - age_in_years
-    - vital_status
+    - Person_person_id
+    - Person_gender_concept_id
+    - Person_year_of_birth
+    - month_of_birth
+    - day_of_birth
+    - birth_datetime
+    - Person_race_concept_id
+    - Person_ethnicity_concept_id
+    - location_id
+    - provider_id
+    - care_site_id
+    - person_source_value
+    - gender_source_value
+    - gender_source_concept_id
+    - race_source_value
+    - race_source_concept_id
+    - ethnicity_source_value
+    - ethnicity_source_concept_id
     slot_usage:
-      primary_email:
-        name: primary_email
-        pattern: ^\S+@[\S+\.]+\S+
+      person_id:
+        name: person_id
+        key: true
+        required: true
+      gender_concept_id:
+        name: gender_concept_id
+        required: true
+      year_of_birth:
+        name: year_of_birth
+        required: true
+      race_concept_id:
+        name: race_concept_id
+        required: true
+      ethnicity_concept_id:
+        name: ethnicity_concept_id
+        required: true
     class_uri: linkml_ohdsi_gis_extension_envar:Person
-  PersonCollection:
-    name: PersonCollection
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/PersonCollection
-    description: A holder for Person objects
+  Concept:
+    name: Concept
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/Concept
+    description: A class representing an OMOP concept
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slots:
-    - personCollection__people
-    attributes:
-      people:
-        name: people
-        range: Person
-        multivalued: true
-        inlined_as_list: true
-    class_uri: linkml_ohdsi_gis_extension_envar:PersonCollection
-    tree_root: true
+    - Concept_concept_id
+    - Concept_concept_name
+    - Concept_domain_id
+    - Concept_vocabulary_id
+    - Concept_concept_class_id
+    - standard_concept
+    - Concept_concept_code
+    - Concept_valid_start_date
+    - Concept_valid_end_date
+    - invalid_reason
+    slot_usage:
+      concept_id:
+        name: concept_id
+        key: true
+        required: true
+      concept_name:
+        name: concept_name
+        required: true
+      domain_id:
+        name: domain_id
+        required: true
+      vocabulary_id:
+        name: vocabulary_id
+        required: true
+      concept_class_id:
+        name: concept_class_id
+        required: true
+      concept_code:
+        name: concept_code
+        required: true
+      valid_start_date:
+        name: valid_start_date
+        required: true
+      valid_end_date:
+        name: valid_end_date
+        required: true
+    class_uri: linkml_ohdsi_gis_extension_envar:Concept
 metamodel_version: 1.11.0
 source_file: linkml_ohdsi_gis_extension_envar.yaml
-source_file_date: '2026-07-06T16:30:07'
-source_file_size: 2440
-generation_date: '2026-07-06T16:30:19'
+source_file_date: '2026-07-27T22:46:06'
+source_file_size: 23166
+generation_date: '2026-07-27T22:46:15'
 

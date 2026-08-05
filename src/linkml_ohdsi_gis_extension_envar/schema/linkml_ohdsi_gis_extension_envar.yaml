@@ -523,18 +523,23 @@ slots:
   address_1:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The first line of the address.
   address_2:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The second line of the address.
   city:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The city containing the location.
   state:
     range: string
     pattern: "^.{0,2}$" # two character limit
+    description: The state containing the location, in 2-character abbreviated format.
   zip:
     range: string
     pattern: "^.{3,9}$" # zips can be 3-digit abbreviations, 5 digits, or 9 digits (ZIP+4)
+    description: The ZIP code containing the location.
   county:
     range: string
     pattern: "^.{0,20}$" # 20 character limit
@@ -572,6 +577,7 @@ slots:
     description: A person's day of birth.
   birth_datetime:
     range: datetime
+    description: A datetime representation of a person's birthdate.
   race_concept_id:
     # identifier: true
     range: integer
@@ -710,7 +716,6 @@ slots:
     # identifier: true
     range: float  # postgresql type: numeric
 
-
   # GeomIndex slots:
   geom_index_id:
     # identifier: true
@@ -800,6 +805,7 @@ slots:
 
   # LocationMap slots:
   address_point:
+    range: string  # More information needed on range.
 
 
 #────────────────────────────────────────────────────────────────

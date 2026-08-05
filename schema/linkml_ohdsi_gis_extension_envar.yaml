@@ -550,6 +550,7 @@ slots:
   address_1:
     name: address_1
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/address_1
+    description: The first line of the address.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:address_1
     owner: Location
@@ -560,6 +561,7 @@ slots:
   address_2:
     name: address_2
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/address_2
+    description: The second line of the address.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:address_2
     owner: Location
@@ -570,6 +572,7 @@ slots:
   city:
     name: city
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/city
+    description: The city containing the location.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:city
     owner: Location
@@ -580,6 +583,7 @@ slots:
   state:
     name: state
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/state
+    description: The state containing the location, in 2-character abbreviated format.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:state
     owner: Location
@@ -590,6 +594,7 @@ slots:
   zip:
     name: zip
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/zip
+    description: The ZIP code containing the location.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:zip
     owner: Location
@@ -700,6 +705,7 @@ slots:
   birth_datetime:
     name: birth_datetime
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/birth_datetime
+    description: A datetime representation of a person's birthdate.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:birth_datetime
     owner: Person
@@ -3004,7 +3010,7 @@ classes:
     class_uri: linkml_ohdsi_gis_extension_envar:Concept
 metamodel_version: 1.11.0
 source_file: linkml_ohdsi_gis_extension_envar.yaml
-source_file_date: '2026-07-27T23:20:13'
-source_file_size: 23864
-generation_date: '2026-07-27T23:20:26'
+source_file_date: '2026-08-05T19:53:50'
+source_file_size: 24276
+generation_date: '2026-08-05T19:54:01'
 

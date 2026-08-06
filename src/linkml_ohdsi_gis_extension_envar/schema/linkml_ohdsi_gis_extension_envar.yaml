@@ -445,6 +445,104 @@ classes:
         required: true
       valid_end_date:
         required: true
+
+
+#────────────────────────────────────────────────────────────────
+# GaiaCatalog Tables
+#────────────────────────────────────────────────────────────────
+
+  DCATMetaData: # Better name?
+    description: >-
+      description text
+    slots:
+      # DCAT
+      - title
+      - creator
+      - identifier
+      - publisher
+      - rights
+      - license
+      - coverage
+      - relation
+      - temporal
+      - type
+      - issued
+      - description
+      - keyword
+      - language
+      - spatialResolutionInMeters
+      - conformsTo
+      - contactPoint
+      - accessURL
+      - downloadURL
+      - qualifiedRelation
+      - modified
+      - extent
+      - bbox
+      - accrualPeriodicity
+      # GDSC
+      - externalId
+      - label
+      - value
+      - attributes
+      - nodata
+      - collections
+      - functions
+      - analyticConformsTo
+      - derived
+      - sponsor
+      - tablename
+      - up
+      - podID
+      - version
+      # ADMS
+      - representationTechnique
+      # LOCN
+      - geometry
+      # PROV
+      - qualifiedAttribution
+      - action
+      - wasGeneratedBy
+      # SPDX
+      - checksum
+
+  ETLMetaData:
+    description: >-
+      description text
+    slots:
+      - rights
+      - temporal_extent
+      - structure
+      - bands
+      - pixel_size
+      - pixel_dimension
+      - geometry
+      - epsg
+      - fields
+      - attributes
+      - tile_zoom
+      - nodata
+      - local_epsg
+      - derive
+      - service
+      - source
+      - file
+      - extension
+      - download
+      - table
+      - format
+      - dependency
+      - etl_parameters
+      - custom_etl
+      - custom_parameters
+      - up
+      - podID
+      - last_updated
+      - update_frequency
+      - checksum
+      - extent
+
+
 #────────────────────────────────────────────────────────────────
 # SLOTS
 #────────────────────────────────────────────────────────────────
@@ -806,6 +904,184 @@ slots:
   # LocationMap slots:
   address_point:
     range: string  # More information needed on range.
+
+
+
+  # GaiaCatalog slots:
+
+  title:
+    range: string
+  creator:
+    range: string  # array?
+  identifier:
+    range: string
+  publisher:
+    range: string  # array?
+  rights:
+    range: string
+  license:
+    range: string
+  coverage:
+    range: string # array?
+  relation:
+    range: string # array?
+  temporal:
+    range: string  #array of dates?
+  type:
+    range: string
+  issued:
+    range: datetime
+  description:
+    range: string
+  keyword:
+    range: string # array?
+  language:
+    range: string
+  spatialResolutionInMeters:
+    range: float
+  conformsTo:
+    range: string
+  contactPoint:
+    range: string # array?
+  accessURL:
+    range: string
+  downloadURL:
+    range: string
+  qualifiedRelation:
+    range: string # array?
+  modified:
+    range: datetime
+  extent:
+    range: string # array?
+  bbox:
+    range: string # Could be the Geometry class....
+  accrualPeriodicity:
+    range: string
+
+  externalId:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  label:
+    range: string
+  value:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  attributes:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  nodata:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  collections:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  functions:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  analyticConformsTo:
+    range: string
+  derived:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  sponsor:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  tablename:
+    range: string
+  up:
+    range: string
+  podID:
+    range: string
+  version:
+    range: datetime
+  representationTechnique:
+    range: string
+  geometry:
+    range: Geometry
+  qualifiedAttribution:
+    range: string
+  action:
+    range: string
+  wasGeneratedBy:
+    range: string
+  checksum:
+    range: string
+
+  temporal_extent:
+    range: date
+    multivalued: true
+    inlined_as_list: true
+  structure:
+    range: string
+  bands:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  pixel_size:
+    range: float
+  pixel_dimension:
+    range: string
+  epsg:
+    range: string
+  fields:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  tile_zoom:
+    range: integer  # maybe float to be safe?
+    multivalued: true
+    inlined_as_list: true
+  local_epsg:
+    range: string
+  derive:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  service:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  source:
+    range: string
+  file:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  extension:
+    range: string
+  download:  # possible enum?
+    range: string
+  table:
+    range: string
+  format:
+    range: string
+  dependency:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  etl_parameters:  # possible enum?
+    range: string
+  custom_etl:
+    range: string
+  custom_parameters:
+    range: string
+  last_updated:
+    range: datetime
+  update_frequency:
+    range: string
+
+
+
+
+
 
 
 #────────────────────────────────────────────────────────────────

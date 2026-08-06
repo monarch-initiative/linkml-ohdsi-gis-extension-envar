@@ -908,7 +908,7 @@ slots:
 
 
   # GaiaCatalog slots:
-
+  #DCAT metadata slots
   title:
     range: string
   creator:
@@ -957,7 +957,7 @@ slots:
     range: string # Could be the Geometry class....
   accrualPeriodicity:
     range: string
-
+  # ETL metadata slots
   externalId:
     range: string
     multivalued: true

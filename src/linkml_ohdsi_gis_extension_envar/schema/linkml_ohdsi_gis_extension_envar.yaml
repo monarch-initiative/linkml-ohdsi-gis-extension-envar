@@ -1014,7 +1014,6 @@ slots:
     range: string
   checksum:
     range: string
-
   temporal_extent:
     range: date
     multivalued: true
@@ -1077,7 +1076,7 @@ slots:
     range: datetime
   update_frequency:
     range: string
-
+  #JSON-LD Metadata slots
 
 
 

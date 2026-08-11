@@ -151,7 +151,7 @@ classes:
       start_date:
         required: true
 
-  LocationMap: #TODO: is there a full schema available somewhere for LocationMap? I have yet to find anything beyond what's in the schema overview diagram that only displays two fields.
+  LocationMap:
     description: >-
       A class representing the locations mapped to address points.
     slots:
@@ -454,70 +454,95 @@ slots:
   external_exposure_id:
     # identifier: true
     range: integer
+    description: The unique key given to a social or environmental exposure for a Person.
   location_id:
     # identifier: true
     range: integer
+    description: The LOCATION_ID of the indicated thing.
   person_id:
     # identifier: true
     range: integer
+    description: The PERSON_ID associated with the person.
   exposure_concept_id:
     # identifier: true
     range: integer
+    description: 	The EXPOSURE_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a exposure.
   exposure_start_date:
     range: date
+    description: The start date of the exposure.
   exposure_start_datetime:
     range: datetime
+    description: The start date of the exposure in datetime format.
   exposure_end_date:
     range: date
+    description: The end date of the exposure.
   exposure_end_datetime:
     range: datetime
+    description: The end date of the exposure in datetime format.
   exposure_type_concept_id:
     # identifier: true
     range: integer
+    description: This field identifies the origin of the exposure record (e.g. Census, EHR, Environmental data, Geospatial data, Satellite imagery, GIS mapping, Sensor network, Mobile device geolocation, LiDAR).
   exposure_relationship_concept_id:
     # identifier: true
     range: integer
+    description: This field can be used to determine the spatiotemporal relationship between the source Exposure and the Person.
   exposure_source_concept_id:
     # identifier: true
     range: integer
+    description: This field can be used to determine the original source of place-based exposure data
   exposure_source_value:
     range: string
+    description: This field houses the verbatim name of the original source of place-based exposure data.
   exposure_relationship_source_value:
     range: string
+    description: The source value used to determine  the spatiotemporal relationship between the source Exposure and the Person.
   dose_unit_source_value:
     range: string
+    description: The source value associated with the dosage of the exposure.
   quantity:
     range: float
+    description: The quantity associated with the exposure.
   modifier_source_value:
     range: string
+    description: The source value for the exposure modifier, if one is present.
   operator_concept_id:
     # identifier: true
     range: integer
+    description: The concept ID associated with the operator, if one is available.
   value_as_number:
     range: float
+    description: This is the numerical value of the Exposure, if available.
   value_as_concept_id:
     # identifier: true
     range: integer
+    description: If the raw data gives a categorial result for exposures those values are captured and mapped to standard concepts in the Exposure Value domain.
   unit_concept_id:
     # identifier: true
     range: integer
+    description: The standard concept ID associated with the unit, if available.
 
   # location history slots
   # location_id
   relationship_type_concept_id:
     # identifier: true
     range: integer
+    description: The concept ID
   domain_id:
     # identifier: true
     range: string  # GIS documentation says integer, which diverges from OMOP CDM 6
     pattern: "^.{0,20}$" # 20 character limit
+    description: The ID of the associated domain.
   entity_id:
     # identifier: true
     range: integer
+    description: The ID of the entity associated with the location.
   start_date:
     range: date
+    description: The starting date for the associated item.
   end_date:
     range: date
+    description: Then ending date for the associated item.
 
   # Location slots
   address_1:
@@ -543,22 +568,28 @@ slots:
   county:
     range: string
     pattern: "^.{0,20}$" # 20 character limit
+    description: The county containing the location.
   location_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The source value for the location in the source data.
   country_concept_id:
     # identifier: true
     range: integer
+    description: The concept ID corresponding to the country containing the location.
   country_source_value:
     range: string
+    description: The source value for the country containing the location.
   latitude:
     range: float
     minimum_value: -90
     maximum_value: 90
+    description: The latitude for the location, between -90 and 90 degrees.
   longitude:
     range: float
     minimum_value: -180
     maximum_value: 180
+    description: The longitude for the location, between -180 and 180 degrees.
 
   # Person table slots
   gender_concept_id:
@@ -597,9 +628,11 @@ slots:
   person_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The source value for the person from the source data.
   gender_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The source value for the person's gender from the source data.
   gender_source_concept_id:
     # identifier: true
     range: integer
@@ -607,45 +640,57 @@ slots:
   race_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The source value for the person's race from the source data.
   race_source_concept_id:
     # identifier: true
     range: integer
-    description: Concept ID corresponding to a race in the source data if a corresponding concept ID exists. Otherwise 0.
+    description: Standard concept ID corresponding to the person's race if a corresponding concept ID exists. Otherwise 0.
   ethnicity_source_value:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The source value for the person's ethnicity from the source data.
   ethnicity_source_concept_id:
     # identifier: true
     range: integer
+    description: Standard concept ID corresponding to the person's ethnicity if a corresponding concept ID exists. Otherwise 0.
 
   # Concept slots
   concept_id:
     # identifier: true
     range: integer
+    description: A unique identifier for each Concept across all domains.
   concept_name:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
+    description: An unambiguous, meaningful and descriptive name for the Concept.
   vocabulary_id:
     # identifier: true
     range: string
     pattern: "^.{0,20}$" # 20 character limit
+    description: A foreign key to the VOCABULARY table indicating from which source the Concept has been adapted.
   concept_class_id:
     # identifier: true
     range: string
     pattern: "^.{0,20}$" # 20 character limit
+    description: The attribute or concept class of the Concept.
   standard_concept:
     range: string
     pattern: "^.$"  # Limit to one character
+    description: This flag determines where a Concept is a Standard Concept, i.e. is used in the data, a Classification Concept, or a non-standard Source Concept. The allowable values are ‘S’ (Standard Concept) and ‘C’ (Classification Concept), otherwise the content is NULL.
   concept_code:
     range: string
     pattern: "^.{0,50}$" # 50 character limit
+    description: The concept code represents the identifier of the Concept in the source vocabulary, such as SNOMED-CT concept IDs, RxNorm RXCUIs etc. Note that concept codes are not unique across vocabularies.
   valid_start_date:
     range: date
+    description: The date when the Concept was first recorded. The default value is 1-Jan-1970, meaning, the Concept has no (known) date of inception.
   valid_end_date:
     range: date
+    description: The date when the Concept became invalid because it was deleted or superseded (updated) by a new concept. The default value is 31-Dec-2099, meaning, the Concept is valid until it becomes deprecated.
   invalid_reason:
     range: string
     pattern: "^.$"  # Limit to one character
+    description: Reason the Concept was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value.
 
   # GeomTemplate slots
   geom_record_id:
@@ -806,6 +851,7 @@ slots:
   # LocationMap slots:
   address_point:
     range: string  # More information needed on range.
+    description: An encoded address point mapped from the source data.
 
 
 #────────────────────────────────────────────────────────────────

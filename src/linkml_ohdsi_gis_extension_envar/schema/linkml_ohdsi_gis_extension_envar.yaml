@@ -696,18 +696,25 @@ slots:
   geom_record_id:
     # identifier: true
     range: integer
+    description: Unique identifier for geometry.
   geom_name:
     range: string
+    description: Human-readable name for the geometry.
   geom_source_coding:
     range: string
+    description: 
   geom_source_value:
     range: string
+    description:
   geom_wgs84:
     range: Geometry
+    description: PostGIS geometry object (polygon, point, line).
   geom_local_epsg:
     range: integer
+    description:
   geom_local_value:
     range: Geometry
+    description: Local value for the geometry object.
 
   # AttrTemplate slots
   attr_record_id:

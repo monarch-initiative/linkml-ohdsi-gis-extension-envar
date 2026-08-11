@@ -310,61 +310,61 @@
 <tr>
 <td><a href="../concept_id/">concept_id</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
+<td>A unique identifier for each Concept across all domains</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../concept_name/">concept_name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>An unambiguous, meaningful and descriptive name for the Concept</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../domain_id/">domain_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>The ID of the associated domain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../vocabulary_id/">vocabulary_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>A foreign key to the VOCABULARY table indicating from which source the Concep...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../concept_class_id/">concept_class_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>The attribute or concept class of the Concept</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../standard_concept/">standard_concept</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>This flag determines where a Concept is a Standard Concept, i</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../concept_code/">concept_code</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>The concept code represents the identifier of the Concept in the source vocab...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../valid_start_date/">valid_start_date</a></td>
 <td>1 <br/> <a href="../Date/">Date</a></td>
-<td></td>
+<td>The date when the Concept was first recorded</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../valid_end_date/">valid_end_date</a></td>
 <td>1 <br/> <a href="../Date/">Date</a></td>
-<td></td>
+<td>The date when the Concept became invalid because it was deleted or superseded...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../invalid_reason/">invalid_reason</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>Reason the Concept was invalidated</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -473,6 +473,7 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">concept_id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concept_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A unique identifier for each Concept across all domains.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -483,6 +484,7 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">concept_name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concept_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An unambiguous, meaningful and descriptive name for the Concept.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
@@ -493,6 +495,7 @@
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.{0,255}$</span>
 <span class="w">  </span><span class="nt">domain_id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">domain_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The ID of the associated domain.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
@@ -504,6 +507,8 @@
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.{0,20}$</span>
 <span class="w">  </span><span class="nt">vocabulary_id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vocabulary_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A foreign key to the VOCABULARY table indicating from which source</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">the Concept has been adapted.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
@@ -514,6 +519,7 @@
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.{0,20}$</span>
 <span class="w">  </span><span class="nt">concept_class_id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concept_class_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The attribute or concept class of the Concept.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
@@ -524,6 +530,10 @@
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.{0,20}$</span>
 <span class="w">  </span><span class="nt">standard_concept</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard_concept</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This flag determines where a Concept is a Standard Concept, i.e.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">is used in the data, a Classification Concept, or a non-standard Source Concept.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">The allowable values are ‘S’ (Standard Concept) and ‘C’ (Classification Concept),</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">otherwise the content is NULL.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
@@ -533,6 +543,9 @@
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.$</span>
 <span class="w">  </span><span class="nt">concept_code</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concept_code</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The concept code represents the identifier of the Concept in the</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">source vocabulary, such as SNOMED-CT concept IDs, RxNorm RXCUIs etc. Note that</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">concept codes are not unique across vocabularies.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
@@ -543,6 +556,8 @@
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.{0,50}$</span>
 <span class="w">  </span><span class="nt">valid_start_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">valid_start_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The date when the Concept was first recorded. The default value is</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">1-Jan-1970, meaning, the Concept has no (known) date of inception.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
@@ -552,6 +567,9 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">valid_end_date</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">valid_end_date</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The date when the Concept became invalid because it was deleted or</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">superseded (updated) by a new concept. The default value is 31-Dec-2099, meaning,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">the Concept is valid until it becomes deprecated.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
@@ -561,6 +579,8 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">invalid_reason</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">invalid_reason</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Reason the Concept was invalidated. Possible values are D (deleted),</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">U (replaced with an update) or NULL when valid_end_date has the default value.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>

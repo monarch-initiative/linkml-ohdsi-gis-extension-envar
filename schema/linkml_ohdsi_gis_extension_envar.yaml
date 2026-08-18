@@ -1000,6 +1000,7 @@ slots:
   geom_source_coding:
     name: geom_source_coding
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_source_coding
+    description: Information about the source coding for the geometry.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_source_coding
     owner: GeomTemplate
@@ -1009,6 +1010,7 @@ slots:
   geom_source_value:
     name: geom_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_source_value
+    description: The source value corresponding to the geometry.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_source_value
     owner: GeomTemplate
@@ -1030,6 +1032,7 @@ slots:
   geom_local_epsg:
     name: geom_local_epsg
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_local_epsg
+    description: The local EPSG value for the geometry.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_local_epsg
     owner: GeomTemplate
@@ -1051,6 +1054,7 @@ slots:
   attr_record_id:
     name: attr_record_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_record_id
+    description: Unique identifier for the attribute record.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_record_id
     owner: AttrTemplate
@@ -1060,6 +1064,7 @@ slots:
   variable_source_record_id:
     name: variable_source_record_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_record_id
+    description: Identifier for the variable source record.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:variable_source_record_id
     owner: AttrTemplate
@@ -1069,6 +1074,7 @@ slots:
   attr_concept_id:
     name: attr_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_concept_id
+    description: The OMOP concept ID for teh attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_concept_id
     owner: AttrTemplate
@@ -1078,6 +1084,7 @@ slots:
   attr_start_date:
     name: attr_start_date
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_start_date
+    description: The start date associated with the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_start_date
     owner: AttrTemplate
@@ -1087,6 +1094,7 @@ slots:
   attr_end_date:
     name: attr_end_date
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_end_date
+    description: The end date associated with the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_end_date
     owner: AttrTemplate
@@ -1096,6 +1104,7 @@ slots:
   value_as_string:
     name: value_as_string
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/value_as_string
+    description: The value in string format.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:value_as_string
     owner: AttrTemplate
@@ -1105,6 +1114,7 @@ slots:
   unit_source_value:
     name: unit_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/unit_source_value
+    description: The source value for the unit associated with the attribute value.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:unit_source_value
     owner: AttrTemplate
@@ -1114,6 +1124,7 @@ slots:
   qualifier_concept_id:
     name: qualifier_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/qualifier_concept_id
+    description: The OMOP concept ID corresponding to the qualifier of the record.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:qualifier_concept_id
     owner: AttrTemplate
@@ -1123,6 +1134,7 @@ slots:
   qualifier_source_value:
     name: qualifier_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/qualifier_source_value
+    description: The source value for the qualifier of the record.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:qualifier_source_value
     owner: AttrTemplate
@@ -1132,6 +1144,7 @@ slots:
   attr_source_concept_id:
     name: attr_source_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_source_concept_id
+    description: The OMOP concept ID corresponding to the source value for the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_source_concept_id
     owner: AttrTemplate
@@ -1141,6 +1154,7 @@ slots:
   attr_source_value:
     name: attr_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_source_value
+    description: The source value for the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_source_value
     owner: AttrTemplate
@@ -1150,6 +1164,7 @@ slots:
   value_source_value:
     name: value_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/value_source_value
+    description: The source value for the value associated with the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:value_source_value
     owner: AttrTemplate
@@ -1159,6 +1174,7 @@ slots:
   attr_index_id:
     name: attr_index_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_index_id
+    description: Unique identifier for the attribute index record.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_index_id
     owner: AttrIndex
@@ -1168,6 +1184,8 @@ slots:
   attr_of_geom_index_id:
     name: attr_of_geom_index_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_of_geom_index_id
+    description: The identifier associated with the attribute of the geometry. Serves
+      as a foreign key to geom_index.geom_index_id.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_of_geom_index_id
     owner: AttrIndex
@@ -1177,6 +1195,8 @@ slots:
   database_schema:
     name: database_schema
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/database_schema
+    description: Schema of the database, associated with the instantiation of the
+      AttrTemplate class.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:database_schema
     owner: GeomIndex
@@ -1188,6 +1208,7 @@ slots:
   table_name:
     name: table_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_name
+    description: The name of the table.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:table_name
     owner: GeomIndex
@@ -1199,6 +1220,7 @@ slots:
   data_source_id:
     name: data_source_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_id
+    description: The ID of the data source. Serves as a foreign key to data_source.data_source_uuid.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:data_source_id
     owner: GeomIndex
@@ -1209,6 +1231,7 @@ slots:
   geom_index_id:
     name: geom_index_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_index_id
+    description: The identifier of the geometry index.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_index_id
     owner: GeomIndex
@@ -1218,6 +1241,7 @@ slots:
   data_type_id:
     name: data_type_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_type_id
+    description: The identifier for the data type.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:data_type_id
     owner: GeomIndex
@@ -1227,6 +1251,7 @@ slots:
   data_type_name:
     name: data_type_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_type_name
+    description: The name of the data type.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:data_type_name
     owner: GeomIndex
@@ -1237,6 +1262,7 @@ slots:
   geom_type_concept_id:
     name: geom_type_concept_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_type_concept_id
+    description: The OMOP concept ID associated with the geometry type.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_type_concept_id
     owner: GeomIndex
@@ -1246,6 +1272,7 @@ slots:
   geom_type_source_value:
     name: geom_type_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_type_source_value
+    description: The source value associated with the geometry type.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_type_source_value
     owner: GeomIndex
@@ -1256,6 +1283,7 @@ slots:
   table_desc:
     name: table_desc
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_desc
+    description: The text description for the table.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:table_desc
     owner: GeomIndex
@@ -1266,6 +1294,7 @@ slots:
   variable_source_id:
     name: variable_source_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_id
+    description: The identifier for the variable source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:variable_source_id
     owner: VariableSource
@@ -1276,6 +1305,7 @@ slots:
   geom_dependency_uuid:
     name: geom_dependency_uuid
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_dependency_uuid
+    description: The UUID associated with teh
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_dependency_uuid
     owner: VariableSource
@@ -1285,6 +1315,7 @@ slots:
   variable_name:
     name: variable_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_name
+    description: The name of the variable.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:variable_name
     owner: VariableSource
@@ -1294,6 +1325,7 @@ slots:
   variable_desc:
     name: variable_desc
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_desc
+    description: The text description of the variable.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:variable_desc
     owner: VariableSource
@@ -1303,6 +1335,7 @@ slots:
   data_source_uuid:
     name: data_source_uuid
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_uuid
+    description: The UUID for the data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:data_source_uuid
     owner: DataSource
@@ -1313,6 +1346,7 @@ slots:
   attr_spec:
     name: attr_spec
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_spec
+    description: The specification for the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:attr_spec
     owner: VariableSource
@@ -1322,6 +1356,7 @@ slots:
   org_id:
     name: org_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/org_id
+    description: The identifier associated with the organization.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:org_id
     owner: DataSource
@@ -1332,6 +1367,7 @@ slots:
   org_set_id:
     name: org_set_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/org_set_id
+    description: The identifier associated with the organization and dataset.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:org_set_id
     owner: DataSource
@@ -1342,6 +1378,7 @@ slots:
   dataset_name:
     name: dataset_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dataset_name
+    description: The name of the dataset.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:dataset_name
     owner: DataSource
@@ -1352,6 +1389,7 @@ slots:
   dataset_version:
     name: dataset_version
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dataset_version
+    description: The version of the dataset.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:dataset_version
     owner: DataSource
@@ -1362,6 +1400,7 @@ slots:
   geom_type:
     name: geom_type
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_type
+    description: The geometry type utilized in the data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_type
     owner: DataSource
@@ -1372,6 +1411,7 @@ slots:
   geom_spec:
     name: geom_spec
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_spec
+    description: The specification associated with the geometry.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:geom_spec
     owner: DataSource
@@ -1381,6 +1421,7 @@ slots:
   boundary_type:
     name: boundary_type
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/boundary_type
+    description: The boundary type associated with the dataset.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:boundary_type
     owner: DataSource
@@ -1391,6 +1432,7 @@ slots:
   has_attributes:
     name: has_attributes
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/has_attributes
+    description: Attributes associated with the data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:has_attributes
     owner: DataSource
@@ -1400,6 +1442,7 @@ slots:
   download_method:
     name: download_method
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_method
+    description: The method needed for downloading the data source (e.g. wget).
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:download_method
     owner: DataSource
@@ -1410,6 +1453,7 @@ slots:
   download_subtype:
     name: download_subtype
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_subtype
+    description: The subtype associated with the download.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:download_subtype
     owner: DataSource
@@ -1420,6 +1464,7 @@ slots:
   download_data_standard:
     name: download_data_standard
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_data_standard
+    description: The data standard associated with the download.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:download_data_standard
     owner: DataSource
@@ -1430,6 +1475,7 @@ slots:
   download_filename:
     name: download_filename
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_filename
+    description: The file name for the downloadable data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:download_filename
     owner: DataSource
@@ -1440,6 +1486,7 @@ slots:
   download_url:
     name: download_url
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_url
+    description: The download URL for the data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:download_url
     owner: DataSource
@@ -1450,6 +1497,7 @@ slots:
   download_auth:
     name: download_auth
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_auth
+    description: The authentication associated with the download.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:download_auth
     owner: DataSource
@@ -1460,6 +1508,7 @@ slots:
   documentation_url:
     name: documentation_url
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/documentation_url
+    description: The URL for documentation associated with the data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     slot_uri: linkml_ohdsi_gis_extension_envar:documentation_url
     owner: DataSource
@@ -1746,6 +1795,7 @@ slots:
   GeomTemplate_geom_source_coding:
     name: GeomTemplate_geom_source_coding
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_source_coding
+    description: Information about the source coding for the geometry.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: geom_source_coding
     domain: GeomTemplate
@@ -1761,6 +1811,7 @@ slots:
   GeomTemplate_geom_source_value:
     name: GeomTemplate_geom_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_source_value
+    description: The source value corresponding to the geometry.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: geom_source_value
     domain: GeomTemplate
@@ -1776,6 +1827,7 @@ slots:
   GeomTemplate_geom_local_epsg:
     name: GeomTemplate_geom_local_epsg
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_local_epsg
+    description: The local EPSG value for the geometry.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: geom_local_epsg
     domain: GeomTemplate
@@ -1809,6 +1861,7 @@ slots:
   AttrTemplate_attr_record_id:
     name: AttrTemplate_attr_record_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_record_id
+    description: Unique identifier for the attribute record.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: attr_record_id
     domain: AttrTemplate
@@ -1841,6 +1894,7 @@ slots:
   AttrTemplate_variable_source_record_id:
     name: AttrTemplate_variable_source_record_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_record_id
+    description: Identifier for the variable source record.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: variable_source_record_id
     domain: AttrTemplate
@@ -1856,6 +1910,7 @@ slots:
   AttrTemplate_attr_start_date:
     name: AttrTemplate_attr_start_date
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_start_date
+    description: The start date associated with the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: attr_start_date
     domain: AttrTemplate
@@ -1871,6 +1926,7 @@ slots:
   AttrTemplate_attr_end_date:
     name: AttrTemplate_attr_end_date
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_end_date
+    description: The end date associated with the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: attr_end_date
     domain: AttrTemplate
@@ -1886,6 +1942,7 @@ slots:
   AttrTemplate_attr_source_value:
     name: AttrTemplate_attr_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_source_value
+    description: The source value for the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: attr_source_value
     domain: AttrTemplate
@@ -1901,6 +1958,7 @@ slots:
   AttrTemplate_value_source_value:
     name: AttrTemplate_value_source_value
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/value_source_value
+    description: The source value for the value associated with the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: value_source_value
     domain: AttrTemplate
@@ -1916,6 +1974,7 @@ slots:
   AttrIndex_attr_index_id:
     name: AttrIndex_attr_index_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_index_id
+    description: Unique identifier for the attribute index record.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: attr_index_id
     domain: AttrIndex
@@ -1932,6 +1991,7 @@ slots:
   AttrIndex_variable_source_id:
     name: AttrIndex_variable_source_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_id
+    description: The identifier for the variable source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: variable_source_id
     domain: AttrIndex
@@ -1947,6 +2007,8 @@ slots:
   AttrIndex_attr_of_geom_index_id:
     name: AttrIndex_attr_of_geom_index_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_of_geom_index_id
+    description: The identifier associated with the attribute of the geometry. Serves
+      as a foreign key to geom_index.geom_index_id.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: attr_of_geom_index_id
     domain: AttrIndex
@@ -1962,6 +2024,8 @@ slots:
   AttrIndex_database_schema:
     name: AttrIndex_database_schema
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/database_schema
+    description: Schema of the database, associated with the instantiation of the
+      AttrTemplate class.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: database_schema
     domain: AttrIndex
@@ -1978,6 +2042,7 @@ slots:
   AttrIndex_table_name:
     name: AttrIndex_table_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_name
+    description: The name of the table.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: table_name
     domain: AttrIndex
@@ -1994,6 +2059,7 @@ slots:
   AttrIndex_data_source_id:
     name: AttrIndex_data_source_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_id
+    description: The ID of the data source. Serves as a foreign key to data_source.data_source_uuid.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: data_source_id
     domain: AttrIndex
@@ -2009,6 +2075,7 @@ slots:
   GeomIndex_geom_index_id:
     name: GeomIndex_geom_index_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/geom_index_id
+    description: The identifier of the geometry index.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: geom_index_id
     domain: GeomIndex
@@ -2025,6 +2092,7 @@ slots:
   GeomIndex_data_type_name:
     name: GeomIndex_data_type_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_type_name
+    description: The name of the data type.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: data_type_name
     domain: GeomIndex
@@ -2041,6 +2109,8 @@ slots:
   GeomIndex_database_schema:
     name: GeomIndex_database_schema
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/database_schema
+    description: Schema of the database, associated with the instantiation of the
+      AttrTemplate class.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: database_schema
     domain: GeomIndex
@@ -2057,6 +2127,7 @@ slots:
   GeomIndex_table_name:
     name: GeomIndex_table_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_name
+    description: The name of the table.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: table_name
     domain: GeomIndex
@@ -2073,6 +2144,7 @@ slots:
   GeomIndex_table_desc:
     name: GeomIndex_table_desc
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/table_desc
+    description: The text description for the table.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: table_desc
     domain: GeomIndex
@@ -2089,6 +2161,7 @@ slots:
   GeomIndex_data_source_id:
     name: GeomIndex_data_source_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_id
+    description: The ID of the data source. Serves as a foreign key to data_source.data_source_uuid.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: data_source_id
     domain: GeomIndex
@@ -2104,6 +2177,7 @@ slots:
   VariableSource_variable_source_id:
     name: VariableSource_variable_source_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_source_id
+    description: The identifier for the variable source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: variable_source_id
     domain: VariableSource
@@ -2120,6 +2194,7 @@ slots:
   VariableSource_variable_name:
     name: VariableSource_variable_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_name
+    description: The name of the variable.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: variable_name
     domain: VariableSource
@@ -2135,6 +2210,7 @@ slots:
   VariableSource_variable_desc:
     name: VariableSource_variable_desc
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/variable_desc
+    description: The text description of the variable.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: variable_desc
     domain: VariableSource
@@ -2150,6 +2226,7 @@ slots:
   VariableSource_data_source_uuid:
     name: VariableSource_data_source_uuid
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_uuid
+    description: The UUID for the data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: data_source_uuid
     domain: VariableSource
@@ -2165,6 +2242,7 @@ slots:
   VariableSource_attr_spec:
     name: VariableSource_attr_spec
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/attr_spec
+    description: The specification for the attribute.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: attr_spec
     domain: VariableSource
@@ -2180,6 +2258,7 @@ slots:
   DataSource_data_source_uuid:
     name: DataSource_data_source_uuid
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/data_source_uuid
+    description: The UUID for the data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: data_source_uuid
     domain: DataSource
@@ -2196,6 +2275,7 @@ slots:
   DataSource_org_id:
     name: DataSource_org_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/org_id
+    description: The identifier associated with the organization.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: org_id
     domain: DataSource
@@ -2212,6 +2292,7 @@ slots:
   DataSource_org_set_id:
     name: DataSource_org_set_id
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/org_set_id
+    description: The identifier associated with the organization and dataset.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: org_set_id
     domain: DataSource
@@ -2228,6 +2309,7 @@ slots:
   DataSource_dataset_name:
     name: DataSource_dataset_name
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dataset_name
+    description: The name of the dataset.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: dataset_name
     domain: DataSource
@@ -2244,6 +2326,7 @@ slots:
   DataSource_dataset_version:
     name: DataSource_dataset_version
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/dataset_version
+    description: The version of the dataset.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: dataset_version
     domain: DataSource
@@ -2260,6 +2343,7 @@ slots:
   DataSource_download_method:
     name: DataSource_download_method
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_method
+    description: The method needed for downloading the data source (e.g. wget).
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: download_method
     domain: DataSource
@@ -2276,6 +2360,7 @@ slots:
   DataSource_download_subtype:
     name: DataSource_download_subtype
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_subtype
+    description: The subtype associated with the download.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: download_subtype
     domain: DataSource
@@ -2292,6 +2377,7 @@ slots:
   DataSource_download_data_standard:
     name: DataSource_download_data_standard
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_data_standard
+    description: The data standard associated with the download.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: download_data_standard
     domain: DataSource
@@ -2308,6 +2394,7 @@ slots:
   DataSource_download_filename:
     name: DataSource_download_filename
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_filename
+    description: The file name for the downloadable data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: download_filename
     domain: DataSource
@@ -2324,6 +2411,7 @@ slots:
   DataSource_download_url:
     name: DataSource_download_url
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/download_url
+    description: The download URL for the data source.
     from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
     is_a: download_url
     domain: DataSource
@@ -3121,7 +3209,7 @@ classes:
     class_uri: linkml_ohdsi_gis_extension_envar:Concept
 metamodel_version: 1.11.0
 source_file: linkml_ohdsi_gis_extension_envar.yaml
-source_file_date: '2026-08-11T23:51:00'
-source_file_size: 28912
-generation_date: '2026-08-11T23:51:09'
+source_file_date: '2026-08-18T00:32:48'
+source_file_size: 31893
+generation_date: '2026-08-18T00:32:57'
 

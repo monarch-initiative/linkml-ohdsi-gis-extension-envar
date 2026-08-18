@@ -302,37 +302,37 @@
 <tr>
 <td><a href="../attr_index_id/">attr_index_id</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
-<td></td>
+<td>Unique identifier for the attribute index record</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../variable_source_id/">variable_source_id</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
+<td>The identifier for the variable source</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../attr_of_geom_index_id/">attr_of_geom_index_id</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
-<td></td>
+<td>The identifier associated with the attribute of the geometry</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../database_schema/">database_schema</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>Schema of the database, associated with the instantiation of the AttrTemplate...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../table_name/">table_name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>The name of the table</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../data_source_id/">data_source_id</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
-<td></td>
+<td>The ID of the data source</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -425,6 +425,7 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">attr_index_id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_index_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier for the attribute index record.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -435,6 +436,7 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">variable_source_id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">variable_source_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The identifier for the variable source.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AttrIndex</span>
@@ -445,6 +447,8 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">attr_of_geom_index_id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_of_geom_index_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The identifier associated with the attribute of the geometry. Serves</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">as a foreign key to geom_index.geom_index_id.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AttrIndex</span>
@@ -454,6 +458,8 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">database_schema</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database_schema</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Schema of the database, associated with the instantiation of the</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">AttrTemplate class.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AttrIndex</span>
@@ -465,6 +471,7 @@
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.{0,255}$</span>
 <span class="w">  </span><span class="nt">table_name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The name of the table.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AttrIndex</span>
@@ -476,6 +483,7 @@
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.{0,255}$</span>
 <span class="w">  </span><span class="nt">data_source_id</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data_source_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The ID of the data source. Serves as a foreign key to data_source.data_source_uuid.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AttrIndex</span>

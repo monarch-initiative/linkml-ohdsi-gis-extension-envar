@@ -702,16 +702,16 @@ slots:
     description: Human-readable name for the geometry.
   geom_source_coding:
     range: string
-    description: 
+    description: Information about the source coding for the geometry.
   geom_source_value:
     range: string
-    description:
+    description: The source value corresponding to the geometry.
   geom_wgs84:
     range: Geometry
     description: PostGIS geometry object (polygon, point, line).
   geom_local_epsg:
     range: integer
-    description:
+    description: The local EPSG value for the geometry.
   geom_local_value:
     range: Geometry
     description: Local value for the geometry object.
@@ -720,140 +720,184 @@ slots:
   attr_record_id:
     # identifier: true
     range: integer  # postgresql type: serial
+    description: Unique identifier for the attribute record.
   # geom_record_id:
   variable_source_record_id:
     # identifier: true
     range: integer
+    description: Identifier for the variable source record.
   attr_concept_id:
     # identifier: true
     range: integer
+    description: The OMOP concept ID for teh attribute.
   attr_start_date:
     range: date
+    description: The start date associated with the attribute.
   attr_end_date:
     range: date
+    description: The end date associated with the attribute.
   # value_as_number:
   value_as_string:
     range: string
+    description: The value in string format.
   # value_as_concept_id:
   # unit_concept_id:
   unit_source_value:
     range: string
+    description: The source value for the unit associated with the attribute value.
   qualifier_concept_id:
     # identifier: true
     range: integer
+    description: The OMOP concept ID corresponding to the qualifier of the record.
   qualifier_source_value:
     range: string
+    description: The source value for the qualifier of the record.
   attr_source_concept_id:
     # identifier: true
     range: integer
+    description: The OMOP concept ID corresponding to the source value for the attribute.
   attr_source_value:
     range: string
+    description: The source value for the attribute.
   value_source_value:
     range: string
+    description: The source value for the value associated with the attribute.
 
   # AttrIndex slots
   attr_index_id:
     # identifier: true
     range: float  # postgresql type: numeric
+    description: Unique identifier for the attribute index record.
   attr_of_geom_index_id:
     # identifier: true
     range: float  # postgresql type: numeric
+    description: The identifier associated with the attribute of the geometry. Serves as a foreign key to geom_index.geom_index_id.
   database_schema:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
+    description: Schema of the database, associated with the instantiation of the AttrTemplate class.
   table_name:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
+    description: The name of the table.
   data_source_id:
     # identifier: true
     range: float  # postgresql type: numeric
+    description: The ID of the data source. Serves as a foreign key to data_source.data_source_uuid.
 
   # GeomIndex slots:
   geom_index_id:
     # identifier: true
     range: float  # postgresql type: numeric
+    description: The identifier of the geometry index.
   data_type_id:
     # identifier: true
     range: float  # postgresql type: numeric
+    description: The identifier for the data type.
   data_type_name:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
+    description: The name of the data type.
   geom_type_concept_id:
     # identifier: true
     range: float  # postgresql type: numeric
+    description: The OMOP concept ID associated with the geometry type.
   geom_type_source_value:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
+    description: The source value associated with the geometry type.
   # database_schema:
   # table_name:
   table_desc:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
+    description: The text description for the table.
   # data_source_id:
 
   # VariableSource slots:
   variable_source_id:
     # identifier: true
     range: integer
+    description: The identifier for the variable source.
   geom_dependency_uuid:
     # identifier: true
     range: integer
+    description: The UUID associated with teh
   variable_name:
     range: string
+    description: The name of the variable.
   variable_desc:
     range: string
+    description: The text description of the variable.
   data_source_uuid:
     # identifier: true
     range: integer
+    description: The UUID for the data source.
   attr_spec:
     range: string
+    description: The specification for the attribute.
 
   # DataSource slots:
   org_id:
     # identifier: true
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The identifier associated with the organization.
   org_set_id:
     # identifier: true
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The identifier associated with the organization and dataset.
   dataset_name:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The name of the dataset.
   dataset_version:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The version of the dataset.
   geom_type:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The geometry type utilized in the data source.
   geom_spec:
     range: string  # Note that the postgres format is listed as text, without character limit
+    description: The specification associated with the geometry.
   boundary_type:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The boundary type associated with the dataset.
   has_attributes:
     range: integer
+    description: Attributes associated with the data source.
   download_method:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The method needed for downloading the data source (e.g. wget).
   download_subtype:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The subtype associated with the download.
   download_data_standard:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The data standard associated with the download.
   download_filename:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The file name for the downloadable data source.
   download_url:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
+    description: The download URL for the data source.
   download_auth:
     range: string
     pattern: "^.{0,100}$" # 100 character limit
+    description: The authentication associated with the download.
   documentation_url:
     range: string
     pattern: "^.{0,255}$" # 255 character limit
+    description: The URL for documentation associated with the data source.
 
   # LocationMap slots:
   address_point:

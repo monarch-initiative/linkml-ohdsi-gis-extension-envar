@@ -543,6 +543,66 @@ classes:
       - extent
 
 
+  # How to model nested variables?
+
+  MetaDataContext:
+    description: >-
+      description text
+    slots:
+      - vocab
+      - dct
+      - qudt
+      - quantitykind
+      - unit
+      - xsd
+      - extendedConstraintProperty
+      - sdmx
+
+  MetaDataIncludedInDataCatalog:
+    description: >-
+      description text
+    slots:
+      - type
+      - id
+      - name
+      - url
+
+  MetaDataCreator:
+    description: >-
+      description text
+    slots:
+      - type
+      - sameAs
+      - id
+      - identifier
+      - name
+
+
+  JSONLDMetaData:
+    description: >-
+      description text
+    slots:
+      - context #dict
+      - type
+      - id
+      - includedInDataCatalog #array-dict
+      - creator #array-dict
+      - url
+      - provider #array-dict
+      - spatialCoverage #array-dict
+      - type
+      - datePublished
+      - description
+      - keywords #array
+      - language
+      - measurementTechnique #array-dict, with additional nested dict
+      - additionalProperty #array-dict
+      - about  #array-dict, with additional nesting
+      - variableMeasured #array-dict,
+      - distribution #array
+      - dateModified
+      - version
+
 #────────────────────────────────────────────────────────────────
 # SLOTS
 #────────────────────────────────────────────────────────────────

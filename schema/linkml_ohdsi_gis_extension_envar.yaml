@@ -3213,7 +3213,7 @@ classes:
     class_uri: linkml_ohdsi_gis_extension_envar:Concept
 metamodel_version: 1.11.0
 source_file: linkml_ohdsi_gis_extension_envar.yaml
-source_file_date: '2026-08-21T21:55:31'
-source_file_size: 32195
-generation_date: '2026-08-21T21:55:41'
+source_file_date: '2026-08-21T22:40:06'
+source_file_size: 32194
+generation_date: '2026-08-21T22:40:16'
 

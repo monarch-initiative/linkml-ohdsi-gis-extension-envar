@@ -678,7 +678,7 @@ slots:
     pattern: "^.{0,20}$" # 20 character limit
     description: The attribute or concept class of the Concept.
   standard_concept:
-    range: string
+    range: StandardConcept
     pattern: "^.$"  # Limit to one character
     description: This flag determines where a Concept is a Standard Concept, i.e. is used in the data, a Classification Concept, or a non-standard Source Concept. The allowable values are ‘S’ (Standard Concept) and ‘C’ (Classification Concept), otherwise the content is NULL.
   concept_code:
@@ -919,7 +919,14 @@ slots:
 # Is there way to specify domain of a concept? If so, could indicate that the race concept ID must have a Race domain ID.
 # It would require a means of looking up the domain of a concept when used in another table, like Race/Ethnicity in the Person table.
 
-# enums:
+enums:
+  StandardConcept:
+    permissible_values:
+      S:
+        description: S, Standard
+      C:
+        description: C, Classification Concept
+
 #   GenderConceptID:
 #     permissible_values:
 #       8532: # OMOP Concept ID, it does result in a warning for having a numeric name.

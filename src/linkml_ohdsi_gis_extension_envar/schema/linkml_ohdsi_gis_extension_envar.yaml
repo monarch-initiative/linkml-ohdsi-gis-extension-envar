@@ -594,7 +594,11 @@ slots:
   # Person table slots
   gender_concept_id:
     # identifier: true
-    range: GenderConceptID
+    # range: GenderConceptID
+    range: integer
+    any_of:
+      - equals_number: 8532
+      - equals_number: 8507
     description: Concept ID corresponding to an OMOP gender concept.
     # range: integer  # Swapping with enum
   year_of_birth:
@@ -915,13 +919,15 @@ slots:
 # Is there way to specify domain of a concept? If so, could indicate that the race concept ID must have a Race domain ID.
 # It would require a means of looking up the domain of a concept when used in another table, like Race/Ethnicity in the Person table.
 
-enums:
-  GenderConceptID:
-    permissible_values:
-      8532: # OMOP Concept ID, it does result in a warning for having a numeric name.
-        description: F, Female
-        meaning: PATO:0000383 # female
-      8507: # OMOP Concept ID, it does result in a warning for having a numeric name.
-        description: M, Male
-        meaning: PATO:0000384 # male
+# enums:
+#   GenderConceptID:
+#     permissible_values:
+#       8532: # OMOP Concept ID, it does result in a warning for having a numeric name.
+#         text: "8532"
+#         description: F, Female
+#         meaning: PATO:0000383 # female
+#       8507: # OMOP Concept ID, it does result in a warning for having a numeric name.
+#         text: "8507"
+#         description: M, Male
+#         meaning: PATO:0000384 # male
 

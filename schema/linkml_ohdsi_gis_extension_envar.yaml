@@ -297,20 +297,6 @@ types:
     base: str
     uri: xsd:string
     repr: str
-enums:
-  GenderConceptID:
-    name: GenderConceptID
-    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/GenderConceptID
-    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
-    permissible_values:
-      '8532':
-        text: '8532'
-        description: F, Female
-        meaning: PATO:0000383
-      '8507':
-        text: '8507'
-        description: M, Male
-        meaning: PATO:0000384
 slots:
   external_exposure_id:
     name: external_exposure_id
@@ -712,7 +698,10 @@ slots:
     owner: Person
     domain_of:
     - Person
-    range: GenderConceptID
+    range: integer
+    any_of:
+    - equals_number: 8532
+    - equals_number: 8507
   year_of_birth:
     name: year_of_birth
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/year_of_birth
@@ -2473,8 +2462,11 @@ slots:
     - Person
     is_usage_slot: true
     usage_slot_name: gender_concept_id
-    range: GenderConceptID
+    range: integer
     required: true
+    any_of:
+    - equals_number: 8532
+    - equals_number: 8507
   Person_year_of_birth:
     name: Person_year_of_birth
     definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/year_of_birth
@@ -3209,7 +3201,7 @@ classes:
     class_uri: linkml_ohdsi_gis_extension_envar:Concept
 metamodel_version: 1.11.0
 source_file: linkml_ohdsi_gis_extension_envar.yaml
-source_file_date: '2026-08-18T00:32:48'
-source_file_size: 31893
-generation_date: '2026-08-18T00:32:57'
+source_file_date: '2026-08-21T21:26:18'
+source_file_size: 32046
+generation_date: '2026-08-21T21:26:29'
 

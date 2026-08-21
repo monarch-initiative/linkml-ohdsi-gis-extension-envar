@@ -288,15 +288,6 @@
 
       Person : gender_concept_id
 
-
-
-
-
-        Person --&gt; "1" GenderConceptID : gender_concept_id
-        click GenderConceptID href "../GenderConceptID/"
-
-
-
       Person : gender_source_concept_id
 
       Person : gender_source_value
@@ -340,7 +331,7 @@
 </tr>
 <tr>
 <td><a href="../gender_concept_id/">gender_concept_id</a></td>
-<td>1 <br/> <a href="../GenderConceptID/">GenderConceptID</a></td>
+<td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Concept ID corresponding to an OMOP gender concept</td>
 <td>direct</td>
 </tr>
@@ -554,8 +545,11 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Person</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Person</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GenderConceptID</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">equals_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8532</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">equals_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8507</span>
 <span class="w">  </span><span class="nt">year_of_birth</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">year_of_birth</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A person's year of birth.</span>

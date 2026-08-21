@@ -519,7 +519,7 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../GenderConceptID/">GenderConceptID</a></td>
+<td><a href="../Integer/">Integer</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
@@ -542,6 +542,15 @@
 </tr>
 </tbody>
 </table>
+<details>
+<summary>Expressions &amp; Logic</summary>
+#### Any Of
+
+Value must satisfy at least one of:
+- AnonymousSlotExpression({'equals_number': 8532})
+- AnonymousSlotExpression({'equals_number': 8507})
+
+</details>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -574,7 +583,10 @@
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Person</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GenderConceptID</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="nt">any_of</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">equals_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8532</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">equals_number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8507</span>
 </code></pre></div>
 </details>
 </div>

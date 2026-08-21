@@ -288,6 +288,15 @@
 
       Concept : standard_concept
 
+
+
+
+
+        Concept --&gt; "0..1" StandardConcept : standard_concept
+        click StandardConcept href "../StandardConcept/"
+
+
+
       Concept : valid_end_date
 
       Concept : valid_start_date
@@ -339,7 +348,7 @@
 </tr>
 <tr>
 <td><a href="../standard_concept/">standard_concept</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../StandardConcept/">StandardConcept</a></td>
 <td>This flag determines where a Concept is a Standard Concept, i</td>
 <td>direct</td>
 </tr>
@@ -539,7 +548,7 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StandardConcept</span>
 <span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.$</span>
 <span class="w">  </span><span class="nt">concept_code</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concept_code</span>

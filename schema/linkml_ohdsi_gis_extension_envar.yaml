@@ -297,6 +297,18 @@ types:
     base: str
     uri: xsd:string
     repr: str
+enums:
+  StandardConcept:
+    name: StandardConcept
+    definition_uri: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar/StandardConcept
+    from_schema: https://w3id.org/monarch-initiative/linkml-ohdsi-gis-extension-envar
+    permissible_values:
+      S:
+        text: S
+        description: S, Standard
+      C:
+        text: C
+        description: C, Classification Concept
 slots:
   external_exposure_id:
     name: external_exposure_id
@@ -915,7 +927,7 @@ slots:
     owner: Concept
     domain_of:
     - Concept
-    range: string
+    range: StandardConcept
     pattern: ^.$
   concept_code:
     name: concept_code
@@ -3201,7 +3213,7 @@ classes:
     class_uri: linkml_ohdsi_gis_extension_envar:Concept
 metamodel_version: 1.11.0
 source_file: linkml_ohdsi_gis_extension_envar.yaml
-source_file_date: '2026-08-21T21:26:18'
-source_file_size: 32046
-generation_date: '2026-08-21T21:26:29'
+source_file_date: '2026-08-21T21:55:31'
+source_file_size: 32195
+generation_date: '2026-08-21T21:55:41'
 

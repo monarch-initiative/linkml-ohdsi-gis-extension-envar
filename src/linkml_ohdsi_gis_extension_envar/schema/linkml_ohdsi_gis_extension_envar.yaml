@@ -466,7 +466,7 @@ slots:
   exposure_concept_id:
     # identifier: true
     range: integer
-    description: 	The EXPOSURE_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a exposure.
+    description: The EXPOSURE_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a exposure.
   exposure_start_date:
     range: date
     description: The start date of the exposure.

@@ -1,0 +1,12 @@
+# Example Concept object
+---
+concept_id: "test_concept" # should fail on not being an integer
+concept_name: # missing value
+domain_id: Condition
+vocabulary_id: A_way_too_long_vocabulary_identifier
+concept_class_id: Diagnosis
+standard_concept: N  # Only S, C, and null allowed
+concept_code: S1947
+valid_start_date: 1/1/1999
+valid_end_date: 12/31/9999
+invalid_reason:
